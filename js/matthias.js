@@ -163,13 +163,8 @@ function manageTitleAndBc (clickedLink, menuLevelActive, menuLevelClicked) {
 	};
 
 	if(menuLevelActive==1){
-<<<<<<< HEAD
-		$("#menuTitel").html("<h3>" + menuTitel + "</h3>" );
-		$("#menuTitel > h3").prepend("<img src=\"../img/icons@2x/icon_" + linkTo + ".png\" />");
-=======
 		$("#menuTitel").html('<h2 class="icon big active '+linkTo+'">' + menuTitel + '</h2>' );
 		/*$("#menuTitel > h2").prepend("<img src=\"../img/icons/icon_" + linkTo + ".png\" />");*/
->>>>>>> 461f02e3ed705ca1ee2cfc8a1ab1c075a2298a08
 		$("#menuTitel").fadeIn().delay(500);
 	}
 

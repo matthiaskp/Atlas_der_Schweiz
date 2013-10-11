@@ -42,22 +42,21 @@ div.icon {
   .icon.themen:before {
     background-image: url("../img/icons/icon_themen.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon.themen:before {
         background-image: url("../img/icons/icon_themen@2x.png");
         background-size: 100% 100%; } }
   .icon.basiskarte:before {
     background-image: url("../img/icons/icon_basiskarte.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon.basiskarte:before {
         background-image: url("../img/icons/icon_basiskarte@2x.png");
         background-size: 100% 100%; } }
   .icon.beschriftung:before {
     background-image: url("../img/icons/icon_beschriftung.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
-      .icon.beschriftung:before {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {      .icon.beschriftung:before {
         background-image: url("../img/icons/icon_beschriftung@2x.png");
         background-size: 100% 100%; } }
   .icon.big {
