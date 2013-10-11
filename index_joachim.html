@@ -49,6 +49,8 @@
             <button class="menubutton icon"  id="zurueckButton"><img src="../img/icons/gui_zurueck.png" alt=""></button>
             <div id="menuTitel"><img class="themenIcon" src="" alt=""></img><p></p></div>
             <input id="suchFeld" type="text" value="" placeholder="suche"></input>
+            
+
             <div class="menu">
                 <ul menuLevel="1" id="menu" class="list">
 
@@ -276,6 +278,207 @@
                     <li>Kommunikation</li>
                 </ul>
             </div>
+<!-- SEARCH -->
+            <div class="livesearch container container_10">
+                <div class="one-fifth">
+                    <form class ="searchform" method="get" autocomplete="off">
+                        <div class="filtercontainer">
+                            <strong>Suche nach:</strong>
+                            <ul class="filterlist list">
+                                <li><input type="checkbox" value="seen" checked> Seen</li>
+                                <li><input type="checkbox" value="fluesse" checked> Flüsse</li>
+                                <li><input type="checkbox" value="themen" checked> Themen</li>
+                                <li><input type="checkbox" value="staedte" checked> Städte/Ortschaften</li>
+                                <li><input type="checkbox" value="bahnlinien" checked> Bahnlinien</li>
+                                <li><input type="checkbox" value="bahnhoefe" checked> Bahnhöfe</li>
+                                <li><input type="checkbox" value="strassen" checked> Strassen</li>
+                                <li><input type="checkbox" value="berge" checked> Berge</li>
+                                <li><input type="checkbox" value="paesse" checked> Pässe</li>
+                                <li><input type="checkbox" value="seilbahnen" checked> Seilbahnen</li>
+                                <li><input type="checkbox" value="gletscher" checked> Gletscher</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="four-fifth">
+                    <div class="one-fifth resultcontainer seen">
+                        <strong>Seen</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>Genfersee</li>
+                            <li>Zürichsee</li>
+                            <li>Thunersee</li>
+                            <li>Bielersee</li>
+                            <li>Sempachersee</li>
+                            <li>Greifensee</li>
+                            <li>Ägerisee</li>
+                            <li>Silsersee</li>
+                            <li>Silvaplanersee</li>
+                            <li>Bodensee</li>
+                        </ul>
+                    </div>
+                    <div class="one-fifth resultcontainer fluesse">
+                        <strong>Flüsse</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>Aare</li>
+                            <li>Rhein</li>
+                            <li>Rhone</li>
+                            <li>Reuss</li>
+                            <li>Limmat</li>
+                            <li>Inn</li>
+                            <li>Saane</li>
+                            <li>Thur</li>
+                            <li>Ticino</li>
+                            <li>Doubs</li>
+                        </ul>
+                    </div>
+                    <div class="two-fifth resultcontainer themen">
+                        <strong>Themen</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>Bevölkerungsdichte: Aktuelle Erhebungen</li>
+                            <li>Mittlere Wohnbevölkerung: Aktuelle Erhebungen</li>
+                            <li>Berghütten: Höhenlage</li>
+                            <li>Raumgliederung nach Gemeinden</li>
+                            <li>Raumgliederung nach Bezirken</li>
+                            <li>Raumgliederung nach Kantonen</li>
+                            <li>Standorte der Fluganlagen</li>
+                            <li>Standorte der Flugsicherungs- und Flugnavigationsanlagen</li>
+                            <li>Reisezeiten öffentlicher Verkehr für verschiedene Ausgangsgemeinden</li>
+                            <li>Windkraftanlagen: Leistung nach Höhenlage</li>
+                        </ul>
+                    </div>
+                    <div class="one-fifth resultcontainer staedte">
+                        <strong>Städte/Ortschaften</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>Aach</li>
+                            <li>Bettlach</li>
+                            <li>Chalais</li>
+                            <li>Evillers</li>
+                            <li>Flims</li>
+                            <li>Grosio</li>
+                            <li>Lausanne</li>
+                            <li>Nufenen</li>
+                            <li>Rugell</li>
+                            <li>Zürich</li>
+                        </ul>
+                    </div>
+                    <div class="one-fifth resultcontainer bahnlinien">
+                        <strong>Bahnlinien</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>St.Gallen - Gais</li>
+                            <li>Zürich - Basel</li>
+                            <li>St.Moritz - Pontresina</li>
+                            <li>Sur - Lenzburg</li>
+                            <li>Illanz - Trun</li>
+                            <li>Rupperswil - Lenzburg</li>
+                            <li>Romanshorn Süd [Abzweigung Egnach] - Romanshorn</li>
+                            <li>Mulhouse-Dornach Ouest - Rixheim [Mulhouse] Ouest</li>
+                            <!-- <li>Erba - Canzo</li>
+                            <li>Dübendorf - Uster</li> -->
+                        </ul>
+                    </div>
+                    <div class="one-fifth resultcontainer bahnhoefe">
+                        <strong>Bahnhöfe</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>St.Gallen</li>
+                            <li>Genf</li>
+                            <li>Zürich</li>
+                            <li>Heerbrugg</li>
+                            <li>Zürich Affoltern</li>
+                            <li>Affoltern am Albis</li>
+                            <li>Fribourg</li>
+                            <li>Aach</li>
+                            <li>Payerne</li>
+                            <li>Lausanne</li>
+                        </ul>
+                    </div>
+                    <div class="one-fifth resultcontainer strassen">
+                        <strong>Strassen</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>1 (CH)</li>
+                            <li>3 (CH)</li>
+                            <li>7 (CH)</li>
+                            <li>1a (CH)</li>
+                            <li>1H (CH)</li>
+                            <li>H18 (CH)</li>
+                            <li>T14 (CH)</li>
+                            <li>H2 (CH)</li>
+                            <li>4a (CH)</li>
+                            <li>50 (CH)</li>
+                        </ul>
+                    </div>
+                    <div class="one-fifth resultcontainer berge">
+                        <strong>Berge</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>Dufourspitze</li>
+                            <li>Dom</li>
+                            <li>Liskamm</li>
+                            <li>Weisshorn</li>
+                            <li>Matterhorn</li>
+                            <li>Dent Blanche</li>
+                            <li>Grand Combin</li>
+                            <li>Finsteraarhorn</li>
+                            <li>Zinalrothorn</li>
+                            <li>Alphubel</li>
+                        </ul>
+                    </div>
+                    <div class="one-fifth resultcontainer paesse">
+                        <strong>Pässe</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>Susten</li>
+                            <li>Splügen</li>
+                            <li>Klausen</li>
+                            <li>Gotthard</li>
+                            <li>Grimsel</li>
+                            <li>Oberalp</li>
+                            <li>Flüela</li>
+                            <li>Lukmanier</li>
+                            <li>Bernina</li>
+                            <li>Albula</li>
+                        </ul>
+                    </div>
+                    <div class="one-fifth resultcontainer seilbahnen">
+                        <strong>Seilbahnen</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>Arosa - Weisshorn</li>
+                            <li>Davos - Jakobshorn</li>
+                            <li>Chur - Brambrüesch</li>
+                            <li>Trübsee - Titlis</li>
+                            <li>Flims - Foppa</li>
+                            <li>Wallis - Vercorin</li>
+                            <li>Parsennhütte - Weissfluhjoch</li>
+                            <li>Embd - Schalb</li>
+                            <li>Intschi - Arnisee</li>
+                            <li>Frümsen - Stauberen</li>
+                        </ul>
+                    </div>
+                    <div class="one-fifth resultcontainer gletscher">
+                        <strong>Gletscher</strong>
+                        <hr>
+                        <ul class="searchlist list">
+                            <li>Allalin</li>
+                            <li>Fee</li>
+                            <li>Gauli</li>
+                            <li>Gorner</li>
+                            <li>Findelen</li>
+                            <li>Kander</li>
+                            <li>Morteratsch</li>
+                            <li>Rhone</li>
+                            <li>Zinal</li>
+                            <li>Oberaletsch</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </nav>
             <button class="icon themen" id="menuButton">menu</button>
         <div id="bottomLeftMenu">
@@ -288,6 +491,12 @@
         </div>
         </div>
         <div class="hintergrund"></div>
+
+        
+
+
+
+
 
 
 

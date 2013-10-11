@@ -231,6 +231,9 @@ h2 {
   .list li:last-of-type {
     margin-bottom: 0; }
 
+.livesearch {
+  display: none; }
+
 .test {
   background-color: #fc4349; }
 
