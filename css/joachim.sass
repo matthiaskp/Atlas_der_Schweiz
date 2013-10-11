@@ -58,9 +58,17 @@ div.icon
 		@include at2x('icons/icon_themen', 100%, 100%, '.png')
 	&.basiskarte:before
 		@include at2x('icons/icon_basiskarte',100%, 100%, '.png')
-	&.beschriftung:before
+	&.legende:before
+		@include at2x('icons/icon_legende', 100%, 100%, '.png')
+	&.beschriftung:before	
 		@include at2x('icons/icon_beschriftung', 100%, 100%, '.png')
-		
+	&.einstellungen:before	
+		@include at2x('icons/icon_einstellungen', 100%, 100%, '.png')
+	&.about:before	
+		@include at2x('icons/icon_about', 100%, 100%, '.png')
+	&.hilfe:before	
+		@include at2x('icons/icon_hilfe', 100%, 100%, '.png')
+
 	&.big
 		// BIG ICON INDEX
 		&.themen:before
@@ -69,9 +77,14 @@ div.icon
 			@include at2x('icons/icon_basiskarte'+'_big', 100%, 100%, '.png')
 		&.beschriftung:before
 			@include at2x('icons/icon_beschriftung'+'_big', 100%, 100%, '.png')
-
-
-
+		&.legende:before
+			@include at2x('icons/icon_legende'+'_big', 100%, 100%, '.png')
+		&.einstellungen:before
+			@include at2x('icons/icon_einstellungen'+'_big', 100%, 100%, '.png')
+		&.startseite:before
+			@include at2x('icons/icon_startseite'+'_big', 100%, 100%, '.png')
+		&.hilfe:before
+			@include at2x('icons/icon_hilfe'+'_big', 100%, 100%, '.png')
 		padding-left: 30px
 		&:before
 			width: 26px
