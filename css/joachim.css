@@ -61,7 +61,7 @@ div.icon {
         background-image: url("../img/icons/icon_beschriftung@2x.png");
         background-size: 100% 100%; } }
   .icon.big {
-    padding-left: 60px; }
+    padding-left: 30px; }
     .icon.big.themen:before {
       background-image: url("../img/icons/icon_themen_big.png");
       background-size: 100% 100%; }
@@ -84,9 +84,9 @@ div.icon {
           background-image: url("../img/icons/icon_beschriftung_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big:before {
-      width: 46px;
-      height: 46px;
-      top: -6px; }
+      width: 26px;
+      height: 26px;
+      top: 5px; }
 
 button {
   width: 50px;
