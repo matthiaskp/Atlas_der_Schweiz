@@ -72,6 +72,7 @@ $("#menu_schliessen").click(function(e){
 	menuLevelActive = 1;
 	checkMenuLevel(menuLevelActive,null);
 	$(".menuContainer").removeClass("menuContainerVisible two-fifth").addClass("menuContainerHidden one-fifth");
+	$(".menu").css("width", "500%");
 });
 
 //////////////////////////// Kartenvorschau 
