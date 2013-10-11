@@ -162,8 +162,8 @@ function manageTitleAndBc (clickedLink, menuLevelActive, menuLevelClicked) {
 	};
 
 	if(menuLevelActive==1){
-		$("#menuTitel").html("<h3>" + menuTitel + "</h3>" );
-		$("#menuTitel > h3").prepend("<img src=\"../img/icons/icon_" + linkTo + ".png\" />");
+		$("#menuTitel").html('<h2 class="icon big active '+linkTo+'">' + menuTitel + '</h2>' );
+		/*$("#menuTitel > h2").prepend("<img src=\"../img/icons/icon_" + linkTo + ".png\" />");*/
 		$("#menuTitel").fadeIn().delay(500);
 	}
 
