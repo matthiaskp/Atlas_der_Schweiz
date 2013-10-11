@@ -1,0 +1,242 @@
+//MEASURES
+$buttonsize: 50px
+$buttonicon: 34px
+
+//COLORS
+$textcolor: #2c3e50
+$hovercolor: #6dbcdb
+$activecolor: #fc4349
+$gutter: 20px
+$lightgray: #d7dadb
+
+//RETINA IMAGE MIXIN
+@mixin at2x($image_name, $w: auto, $h: auto, $extention: '.png')
+	background-image: url("../img/" + $image_name + $extention)
+	$x2img : $image_name + '@2x' + $extention
+
+	@media all and (-webkit-min-device-pixel-ratio : 1.5)
+		background-image: url("../img/" + $x2img)
+		background-size: $w $h
+
+//LAYOUT STYLES
+.fullheight
+	height: 100%
+
+
+// ICON CLASSES
+div.icon
+	width: 22px
+	height: 22px
+	padding: 0
+	margin: 0
+	display: block
+	&:before
+		@include at2x('icons/icon_themen', 100%, 100%, '.png')
+		top: 0
+	&.big
+		width: 46px
+		height: 46px
+		margin: 0
+		padding: 0
+		&:before
+			top: 0
+
+.icon
+	position: relative
+	padding-left: 35px
+	&:before
+		content: ""
+		width: 22px
+		height: 22px
+		position: absolute
+		left: 0
+		top: 2px
+		@include at2x('icons/icon_themen', 100%, 100%, '.png')
+	// SMALL ICON INDEX
+	&.themen:before
+		@include at2x('icons/icon_themen', 100%, 100%, '.png')
+	&.basiskarte:before
+		@include at2x('icons/icon_basiskarte',100%, 100%, '.png')
+	&.beschriftung:before
+		@include at2x('icons/icon_beschriftung', 100%, 100%, '.png')
+		
+	&.big
+		// BIG ICON INDEX
+		&.themen:before
+			@include at2x('icons/icon_themen'+'_big', 100%, 100%, '.png')
+		&.basiskarte:before
+			@include at2x('icons/icon_basiskarte'+'_big', 100%, 100%, '.png')
+		&.beschriftung:before
+			@include at2x('icons/icon_beschriftung'+'_big', 100%, 100%, '.png')
+
+
+
+		padding-left: 60px
+		&:before
+			width: 46px
+			height: 46px
+			top: -6px
+// BUTTONS
+button
+	width: $buttonsize
+	height: $buttonsize
+	border: none
+	background-color: white
+	-webkit-box-shadow: 0px 1px 6px -3px #000000
+	box-shadow: 0px 1px 6px -3px #000000
+	-webkit-border-radius: 2px
+	color: white
+	outline: none
+	&:hover
+		background-color: lighten($lightgray,12%)
+	&:active
+		background-color: lighten($lightgray,8%)
+	&.icon:before
+		width: $buttonicon
+		height: $buttonicon
+		top: ($buttonsize - $buttonicon) / 2
+		left: ($buttonsize - $buttonicon) / 2
+	&.menubutton
+		-webkit-box-shadow: none
+		box-shadow: none
+		background-color: transparent
+		&:hover
+			background-color: transparent
+		&:active
+			background-color: transparent
+//CHECKBOXES
+.onoffswitch
+	position: relative
+	width: 40px
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+
+.onoffswitch-checkbox 
+	display: none
+
+.onoffswitch-label 
+	display: block
+	overflow: hidden
+	cursor: pointer
+	border: 2px solid transparent
+	border-radius: 25px
+
+.onoffswitch-inner 
+	width: 200%
+	margin-left: -100%
+	-moz-transition: margin 0.3s ease-in 0s
+	-webkit-transition: margin 0.3s ease-in 0s
+	-o-transition: margin 0.3s ease-in 0s
+	transition: margin 0.3s ease-in 0s
+
+.onoffswitch-inner:before, .onoffswitch-inner:after 
+	float: left
+	width: 50%
+	height: 23px
+	padding: 0
+	line-height: 30px
+	font-size: 0px
+	font-family: Trebuchet, Arial, sans-serif
+	font-weight: bold
+	-moz-box-sizing: border-box
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+
+.onoffswitch-inner:before 
+	content: ""
+	padding-left: 15px
+	background-color: $hovercolor
+	color: #FFFFFF
+
+.onoffswitch-inner:after 
+	content: ""
+	padding-right: 15px
+	background-color: $lightgray
+	color: #666666
+	text-align: right
+
+.onoffswitch-switch 
+	width: 16px
+	margin: 4px
+	background: white
+	border: 2px solid transparent
+	-moz-box-shadow: 0 0 1px 1px #888
+	-webkit-box-shadow: 0 0 1px 1px#888
+	box-shadow: 0 0 1px 1px #888
+	border-radius: 20px
+	position: absolute
+	top: 0
+	bottom: 0
+	right: 12px
+	-moz-transition: all 0.3s ease-in 0s
+	-webkit-transition: all 0.3s ease-in 0s
+	-o-transition: all 0.3s ease-in 0s
+	transition: all 0.3s ease-in 0s
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner
+	margin-left: 0
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch
+	right: 0px
+
+// TYPO
+@font-face
+	font-family: 'robotolight'
+	src: url('fonts/roboto-light.eot')
+	src: url('fonts/roboto-light.eot?#iefix') format('embedded-opentype'),url('fonts/roboto-light.woff') format('woff'),url('fonts/roboto-light.ttf') format('truetype'),url('fonts/roboto-light.svg#robotolight') format('svg')
+	font-weight: normal
+	font-style: normal
+
+body
+	font-family: 'robotolight', sans-serif
+	font-size: 17px
+	color: $textcolor
+h2
+	font-size: 25px
+	font-weight: normal
+	position: relative
+.smalltext
+	color: #959696
+	font-size: 14px
+.clickable
+	cursor: pointer
+	&:hover
+		color: $hovercolor
+	&:active
+		color: $activecolor
+.active
+	color: $activecolor
+
+// LISTS
+.list
+	list-style-type: none
+	padding: 0
+	li
+		line-height: 25px
+		margin-bottom: 15px
+	li:last-of-type
+		margin-bottom: 0
+
+// HELPER STYLES
+.test
+	background-color: $activecolor
+
+body.helper
+	padding: 0 20px
+	h1
+		margin-top: $gutter*2 
+		color: #dde0e0
+	.container p
+		padding: 10px
+		border: 1px solid white
+		background-color: #f1f1f1
+	.helper
+		p
+			border: none
+			padding: 0 $gutter
+		background-color: $activecolor
+		color: white
+		border-radius: 5px
+		position: fixed
+		z-index: 10
+		top: 20px
+		right: 20px

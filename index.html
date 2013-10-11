@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Atlas der Schweiz - Mobile</title>
+        <meta name="description" content="">
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+
+        <!-- APPLE APP THINGS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <link rel="apple-touch-icon" href="apple-touch-icon-57x57-precomposed.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
+        <!-- iPad (Retina) -->
+        <!-- <link href="startup.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image"> -->
+        <link href="startup.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: landscape)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+
+        
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/matthias.css">
+        <link rel="stylesheet" href="css/ramun.css">
+        <link rel="stylesheet" href="css/joachim.css">
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    </head>
+    <body class="container container_10">
+        <div class="vordergrund">
+            <nav class="menuContainer menuContainerHidden one-fifth">
+        <!-- Menu -> -->
+            <button class="menubutton icon" id="menu_schliessen"><img src="../img/icons/gui_schliessen.png" alt=""></button>
+            <button class="menubutton icon"  id="zurueckButton"><img src="../img/icons/gui_zurueck.png" alt=""></button>
+            <div id="menuTitel"><img class="themenIcon" src="" alt=""></img><p></p></div>
+            <input id="suchFeld" type="text" value="" placeholder="suche"></input>
+            <div class="menu">
+                <ul menuLevel="1" id="menu" class="list">
+
+
+
+                    <!-- I would recommend something like this because of how we handled icon classes in the new sass file.
+                    And check the JS sliding movement of the menu, it seems to have a to low value (that's why the last div breaks). Maybe a border-box style problem-->
+
+                    <li class="icon basiskarte">
+                        <a linkTo="basiskarte" href="#">Karte</a>
+                    </li>
+
+
+
+
+                    <li>
+                        <a  linkTo="themen" href="#"><span id="icon_themen"><img src="../img/icons/icon_themen.png" alt=""></span>Themen</a>
+                    </li>
+                    <li>
+                        <a  linkTo="beschriftung" href="#"><span id="icon_beschriftung"><img src="../img/icons/icon_beschriftung.png" alt=""></span>Beschriftung</a>
+                    </li>
+                    <li>
+                        <a  linkTo="legende" href="#"><span id="icon_legende"><img src="../img/icons/icon_legende.png" alt=""></span>Legende</a>
+                    </li>
+                    <li>
+                        <a  linkTo="startseite" href="#"><span id="icon_startseite">
+                            <img src="../img/icons/icon_startseite.png" alt=""></span>Startseite</a></li>
+                    <li>
+                        <a  linkTo="einstellungen" href="#"><span id="icon_einstellungen"><img src="../img/icons/icon_einstellungen.png" alt=""></span>Einstellungen</a>
+                    </li>
+                    <li>
+                        <a  linkTo="hilfe" href="#"><span id="icon_hilfe"><img src="../img/icons/icon_hilfe.png" alt=""></span>Hilfe</a>
+                    </li>
+                </ul>
+
+                <div id="kartenvorschau">
+                    <h4> Kartenvorschau </h4>
+                    <img src="../img/kartenvorschau/stand_bevoelkerung_jaehrliche_angaben.PNG" alt="">
+                    <button id="button_karte_auswaehlen">auswählen</button>
+                </div>
+
+                <!-- Menu -> Basiskarte -->
+                <ul menuLevel="2" id="basiskarte">
+                    <li>Seen <button id="basiskarte_seen">ausblenden</button></li>
+                    <li>Flüsse<button id="basiskarte_fluesse">ausblenden</button></li>
+                    <li>Siedlungen<button id="basiskarte_siedlungen">ausblenden</button></li>
+                    <li>Strassen<button id="basiskarte_strassen">einblenden</button></li>
+                    <li>Bahnlinien<button id="basiskarte_bahnlinien">einblenden</button></li>
+                    <li>Bahnhöfe<button id="basiskarte_bahnhöfe">einblenden</button></li>
+                    <li>Seilbahnen<button id="basiskarte_seilbahnen">einblenden</button></li>
+                    <li>Gemeinden<button id="basiskarte_gemeinden">einblenden</button></li>
+                    <li>Bezirke<button id="basiskarte_bezirke">einblenden</button></li>
+                    <li>Kantone<button id="basiskarte_kantone">einblenden</button></li>
+                    <li>Landesgrenzen<button id="basiskarte_landesgrenzen">einblenden</button></li>
+                    <li>Berge<button id="basiskarte_berge">einblenden</button></li>
+                    <li>Pässe<button id="basiskarte_paesse">einblenden</button></li>
+                    <li>Höhenkurven<button id="basiskarte_hoehenkurven">einblenden</button></li>
+                    <li>Fels<button id="basiskarte_fels">einblenden</button></li>
+                    <li>Relief<button id="basiskarte_relief">einblenden</button></li>
+                    <li>Landeskarte<button id="basiskarte_landeskarte">einblenden</button></li>
+                    <li>Satelitenbild<button id="basiskarte_satelitenbild">einblenden</button></li>
+                </ul>
+
+                <ul menuLevel="2"  id="themen">
+                    <li><a linkTo="natur_und_umwelt" href="#">Natur & Umwelt</a></li>
+                    <li><a linkTo="gesellschaft" href="#">Gesellschaft</a></li>
+                    <li><a linkTo="wirtschaft" href="#">Wirtschaft</a></li>
+                    <li><a linkTo="staat_und_politik" href="#">Staat & Politik</a></li>
+                    <li><a linkTo="verkehr" href="#">Verkehr</a></li>
+                    <li><a linkTo="energie_und_kommunikation" href="#">Energie & Kommunikation</a></li>
+                </ul>
+
+                <ul menuLevel="2" id="legende">
+                    <li>Karte 1</li>
+                    <li>Karte 2</li>
+                    <li>Karte 3</li>
+                    <li>Karte 4</li>
+                </ul>
+
+                <ul menuLevel="2" id="beschriftung">
+                    <li>Beschriftung 1</li>
+                    <li>Beschriftung 2</li>
+                    <li>Beschriftung 3</li>
+                    <li>Beschriftung 4</li>
+                </ul>
+
+                <ul menuLevel="2" id="einstellungen">
+                    <li>Einstellungen 1</li>
+                    <li>Einstellungen 2</li>
+                    <li>Einstellungen 3</li>
+                    <li>Einstellungen 4</li>
+                </ul>
+
+                <ul menuLevel="2" id="hilfe">
+                    <li>Hilfe 1</li>
+                    <li>Hilfe 2</li>
+                    <li>Hilfe 3</li>
+                    <li>Hilfe 4</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Natur & Umwelt -->
+                <ul menuLevel="3" id="natur_und_umwelt">
+                    <li>Wetter und Klima</li>
+                    <li>Wasser</li>
+                    <li>Eis und Schnee</li>
+                    <li>Geologie und Rohstoffe</li>
+                    <li>Boden</li>
+                    <li>Landschaften</li>
+                    <li>Pflanzen</li>
+                    <li>Tiere</li>
+                </ul>
+
+                <!-- Menu -> Themen ->  Gesellschaft -->
+
+                <ul menuLevel="3" id="gesellschaft">
+                    <li><a linkTo="bevoelkerung" href="#">Bevölkerung</a></li>
+                    <li>Sprache</li>
+                    <li>Religion</li>
+                    <li>Bildung</li>
+                    <li>Gesundheit</li>
+                    <li>Haushalte</li>
+                </ul>
+
+                <!-- Menu -> Themen ->  Gesellschaft -> Bevölkerung -->
+                <ul menuLevel="4" id="bevoelkerung">
+                    <li><a linkTo="stand" href="#">Stand</a></li>
+                    <li><a linkTo="entwicklung" href="#">Entwicklung</a></li>
+                    <li><a linkTo="dichte_und_verteilung" href="#">Dichte und Verteilung</a></li>
+                    <li><a linkTo="alter" href="#">Alter</a></li>
+                    <li><a linkTo="geschlecht" href="#">Geschlecht</a></li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Stand -->
+
+                <ul menuLevel="5" id="stand">
+                    <li><a linkTo="stand_bevoelkerung_jaehrliche_angaben" href="#">Bevölkerung: Jährliche Angaben</a></li>
+                    <li><a linkTo="stand_volkszaehlungen" href="#">Volkszählungen</a></li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Entwicklung -->
+
+                <ul menuLevel="5" id="entwicklung">
+                    <li><a linkTo="entwicklung_bevoelkerung_jaehrliche_angaben" href="#">Bevölkerung: Jährliche Angaben</a></li>
+                    <li><a linkTo="entwicklung_volkszaehlungen" href="#">Volkszählungen</a></li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Dichte und Verteilung -->
+
+                <ul menuLevel="5" id="dichte_und_verteilung">
+                    <li><a linkTo="bevoelkerungsdichte_aktuell" href="#">Bevölkerungsdichte: Aktuell</a></li>
+                    <li><a linkTo="dichte_volkszaehlungen" href="#">Dichte: Volkszählungen</a></li>
+                    <li><a linkTo="bevoelkerungsverteilung"href="#">Bevölkerungsverteilung</a></li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Alter -->
+
+                <ul menuLevel="5" id="alter">
+                    <li>0- bis 14-Jährige</li>
+                    <li>15- bis 64-Jährige</li>
+                    <li>über 64-Jährige</li>
+                    <li>0- bis 9-Jährige</li>
+                    <li>10- bis 19-Jährige</li>
+                    <li>20- bis 29-Jährige</li>
+                    <li>30- bis 39-Jährige</li>
+                    <li>40- bis 49-Jährige</li>
+                    <li>50- bis 59-Jährige</li>
+                    <li>60- bis 69-Jährige</li>
+                    <li>70- bis 79-Jährige</li>
+                    <li>80- bis 89-Jährige</li>
+                    <li>90- bis 99-Jährige</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Geschlecht -->
+
+                <ul menuLevel="5" id="geschlecht">
+                    <li>Geschlechtsverteilung: Frauen</li>
+                    <li>0- bis 14-jährige Mädchen</li>
+                    <li>15- bis 64-jährige Frauen</li>
+                    <li>über 64-jährige Frauen</li>
+                    <li>Geschlechtsverteilung: Männer</li>
+                    <li>0- bis 14-jährige Knaben</li>
+                    <li>15- bis 64-jährige Männer</li>
+                    <li>über 64-jährige Männer</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Wirtschaft -->
+
+                <ul menuLevel="3" id="wirtschaft">
+                    <li>Arbeit</li>
+                    <li>Landwirtschaft</li>
+                    <li>Industrie</li>
+                    <li>Dienstleistungen</li>
+                    <li>Tourismus</li>
+                    <li>Bauen und Wohnen</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Staat und Politik -->
+                <ul menuLevel="3" id="staat_und_politik">
+                    <li>Raumgliederungen</li>
+                    <li>Abstimmungen</li>
+                    <li>Parlamentswahlen</li>
+                    <li>Öffentliche Finanzen</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Verkehr -->
+                <ul menuLevel="3" id="verkehr" >
+                    <li>Flugverkehr</li>
+                    <li>Strassenverkehr</li>
+                    <li>Schienenverkehr</li>
+                    <li>Bergbahnen</li>
+                    <li>Schiffsverkehr</li>
+                    <li>Langsamverkehr</li>
+                    <li>Pendler</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Energie und Kommunikation -->
+
+                <ul menuLevel="3" id="energie_und_kommunikation">
+                    <li>Primär-Energie</li>
+                    <li>Sekundär-Energie</li>
+                    <li>Energiewirtschaft</li>
+                    <li>Kommunikation</li>
+                </ul>
+            </div>
+        </nav>
+            <button class="icon themen" id="menuButton">menu</button>
+        <div id="bottomLeftMenu">
+            <button class="icon" id="timeline">time</button>
+            <button class="icon" id="dimensionswechsel">3d</button>
+            <button class="icon" id="ausrichten">ausrichten</button>
+        </div>
+            <div id="kartenFarben">
+            
+        </div>
+        </div>
+        <div class="hintergrund"></div>
+
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="js/joachim.js"></script>
+        <script src="js/matthias.js"></script>
+        <script src="js/ramun.js"></script>
+    </body>
+</html>
