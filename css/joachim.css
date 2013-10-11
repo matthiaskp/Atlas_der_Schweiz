@@ -11,7 +11,7 @@ div.icon {
     background-image: url("../img/icons/icon_themen.png");
     background-size: 100% 100%;
     top: 0; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       div.icon:before {
         background-image: url("../img/icons/icon_themen@2x.png");
         background-size: 100% 100%; } }
@@ -35,7 +35,7 @@ div.icon {
     top: 2px;
     background-image: url("../img/icons/icon_themen.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon:before {
         background-image: url("../img/icons/icon_themen@2x.png");
         background-size: 100% 100%; } }
@@ -56,36 +56,37 @@ div.icon {
   .icon.beschriftung:before {
     background-image: url("../img/icons/icon_beschriftung.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio : 1.5) {      .icon.beschriftung:before {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.beschriftung:before {
         background-image: url("../img/icons/icon_beschriftung@2x.png");
         background-size: 100% 100%; } }
   .icon.big {
-    padding-left: 60px; }
+    padding-left: 30px; }
     .icon.big.themen:before {
       background-image: url("../img/icons/icon_themen_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.themen:before {
           background-image: url("../img/icons/icon_themen_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big.basiskarte:before {
       background-image: url("../img/icons/icon_basiskarte_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.basiskarte:before {
           background-image: url("../img/icons/icon_basiskarte_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big.beschriftung:before {
       background-image: url("../img/icons/icon_beschriftung_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.beschriftung:before {
           background-image: url("../img/icons/icon_beschriftung_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big:before {
-      width: 46px;
-      height: 46px;
-      top: -6px; }
+      width: 26px;
+      height: 26px;
+      top: 5px; }
 
 button {
   width: 50px;
