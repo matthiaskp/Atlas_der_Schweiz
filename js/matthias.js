@@ -80,7 +80,7 @@ $("ul[menulevel=5] > li > a").click(function(e){
 	e.preventDefault();
 	console.log("kartenvorschau wird gewechselt");
 	var karte = $(this).attr("linkTo");
-	$("#kartenvorschau > img").attr("src", "../img/kartenvorschau/" + karte + ".png");
+	$("#kartenvorschau > img").attr("src", "img/kartenvorschau/" + karte + ".png");
 	$("#kartenvorschau").show();
 	getKartenFarben(karte);
 });
@@ -163,7 +163,7 @@ function manageTitleAndBc (clickedLink, menuLevelActive, menuLevelClicked) {
 	};
 
 	if(menuLevelActive==1){
-		$("#menuTitel").html('<h2 class="icon big active '+linkTo+'">' + menuTitel + '</h2>' );
+		$("#menuTitel").html('<h2 class="icon big '+linkTo+'">' + menuTitel + '</h2>' );
 		/*$("#menuTitel > h2").prepend("<img src=\"../img/icons/icon_" + linkTo + ".png\" />");*/
 		$("#menuTitel").fadeIn().delay(500);
 	}

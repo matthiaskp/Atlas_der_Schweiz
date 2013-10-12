@@ -41,24 +41,21 @@
         <![endif]-->
         <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </head>
-    <body class="container container_10">
-        <div class="vordergrund">
-            <nav class="menuContainer menuContainerHidden one-fifth" style="overflow-y: scroll">
-        <!-- Menu -> -->
-            <button class="menubutton icon" id="menu_schliessen"><img src="../img/icons/gui_schliessen.png" alt=""></button>
-            <button class="menubutton icon"  id="zurueckButton"><img src="../img/icons/gui_zurueck.png" alt=""></button>
-            <div id="menuTitel"><img class="themenIcon" src="" alt=""></img><p></p></div>
-            <input id="suchFeld" type="text" value="" placeholder="suche"></input>
-            
-
+    <body class="container container_10" style="background-image: url(img/schweiz_default.png); background-size: 100% 100%;">
+        <nav class="one-fifth menuContainer">
+            <header>
+                <div class="menucontrols clearfix">
+                    <button class="menubutton icon" id="zurueckButton"></button>
+                    <button class="menubutton icon" id="menu_schliessen"></button>
+                </div>
+                <input id="suchFeld" type="text" value="" placeholder="Suchen..."></input>
+                <div id="menuTitel">
+                    <h2 class="icon big themen">Themen</h2>
+                    <span class="smalltext">Verkehr > Schienenverkehr</span>
+                </div>
+            </header>
             <div class="menu">
                 <ul menuLevel="1" id="menu" class="list">
-
-
-
-                    <!-- I would recommend something like this because of how we handled icon classes in the new sass file.
-                    And check the JS sliding movement of the menu, it seems to have a to low value (that's why the last div breaks). Maybe a border-box style problem-->
-
                     <li class="icon basiskarte">
                         <a linkTo="basiskarte" href="#">Karte</a>
                     </li>
@@ -68,56 +65,203 @@
                     <li class="icon beschriftung">
                         <a linkTo="beschriftung" href="#">Beschriftung</a>
                     </li>
-
-                    <!-- <li>
-                        <a  linkTo="themen" href="#"><span id="icon_themen"><img src="../img/icons/icon_themen.png" alt=""></span>Themen</a>
+                    <li class="icon legende">
+                        <a linkTo="legende" href="#">Legende</a>
                     </li>
-                    <li>
-                        <a  linkTo="beschriftung" href="#"><span id="icon_beschriftung"><img src="../img/icons/icon_beschriftung.png" alt=""></span>Beschriftung</a>
-                    </li> -->
-                    <li>
-                        <a  linkTo="legende" href="#"><span id="icon_legende"><img src="../img/icons/icon_legende.png" alt=""></span>Legende</a>
+                    <li class="icon einstellungen">
+                        <a linkTo="einstellungen" href="#">Einstellungen</a>
                     </li>
-                    <li>
-                        <a  linkTo="startseite" href="#"><span id="icon_startseite">
-                            <img src="../img/icons/icon_startseite.png" alt=""></span>Startseite</a></li>
-                    <li>
-                        <a  linkTo="einstellungen" href="#"><span id="icon_einstellungen"><img src="../img/icons/icon_einstellungen.png" alt=""></span>Einstellungen</a>
+                    <li class="icon startseite">
+                        <a linkTo="startseite" href="#">About</a>
                     </li>
-                    <li>
-                        <a  linkTo="hilfe" href="#"><span id="icon_hilfe"><img src="../img/icons/icon_hilfe.png" alt=""></span>Hilfe</a>
+                    <li class="icon hilfe">
+                        <a linkTo="hilfe" href="#">Hilfe</a>
                     </li>
                 </ul>
-
-                <div id="kartenvorschau">
-                    <h4> Kartenvorschau </h4>
-                    <img src="../img/kartenvorschau/stand_bevoelkerung_jaehrliche_angaben.PNG" alt="">
-                    <button id="button_karte_auswaehlen">auswählen</button>
-                </div>
-
                 <!-- Menu -> Basiskarte -->
-                <ul menuLevel="2" id="basiskarte">
-                    <li>Seen <button id="basiskarte_seen">ausblenden</button></li>
-                    <li>Flüsse<button id="basiskarte_fluesse">ausblenden</button></li>
-                    <li>Siedlungen<button id="basiskarte_siedlungen">ausblenden</button></li>
-                    <li>Strassen<button id="basiskarte_strassen">einblenden</button></li>
-                    <li>Bahnlinien<button id="basiskarte_bahnlinien">einblenden</button></li>
-                    <li>Bahnhöfe<button id="basiskarte_bahnhöfe">einblenden</button></li>
-                    <li>Seilbahnen<button id="basiskarte_seilbahnen">einblenden</button></li>
-                    <li>Gemeinden<button id="basiskarte_gemeinden">einblenden</button></li>
-                    <li>Bezirke<button id="basiskarte_bezirke">einblenden</button></li>
-                    <li>Kantone<button id="basiskarte_kantone">einblenden</button></li>
-                    <li>Landesgrenzen<button id="basiskarte_landesgrenzen">einblenden</button></li>
-                    <li>Berge<button id="basiskarte_berge">einblenden</button></li>
-                    <li>Pässe<button id="basiskarte_paesse">einblenden</button></li>
-                    <li>Höhenkurven<button id="basiskarte_hoehenkurven">einblenden</button></li>
-                    <li>Fels<button id="basiskarte_fels">einblenden</button></li>
-                    <li>Relief<button id="basiskarte_relief">einblenden</button></li>
-                    <li>Landeskarte<button id="basiskarte_landeskarte">einblenden</button></li>
-                    <li>Satelitenbild<button id="basiskarte_satelitenbild">einblenden</button></li>
+                <ul menuLevel="2" id="basiskarte" class="list">
+                    <li>
+                        Seen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="seenonoff">
+                            <label class="onoffswitch-label" for="seenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>Flüsse
+                    <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fluesseonoff">
+                            <label class="onoffswitch-label" for="fluesseonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Siedlungen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="siedlungenonoff">
+                            <label class="onoffswitch-label" for="siedlungenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Strassen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="strassenonoff">
+                            <label class="onoffswitch-label" for="strassenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Bahnlinien
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bahnlinienonoff">
+                            <label class="onoffswitch-label" for="bahnlinienonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Bahnhöfe
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bahnhoefeonoff">
+                            <label class="onoffswitch-label" for="bahnhoefeonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Seilbahnen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="seilbahnenonoff">
+                            <label class="onoffswitch-label" for="seilbahnenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Gemeinden
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="gemeindenonoff">
+                            <label class="onoffswitch-label" for="gemeindenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Bezirke
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bezirkeonoff">
+                            <label class="onoffswitch-label" for="bezirkeonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Kantone
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="kantoneonoff">
+                            <label class="onoffswitch-label" for="kantoneonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Landesgrenzen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="landesgrenzenonoff">
+                            <label class="onoffswitch-label" for="landesgrenzenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Berge
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bergeonoff">
+                            <label class="onoffswitch-label" for="bergeonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Pässe
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="paesseonoff">
+                            <label class="onoffswitch-label" for="paesseonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Höhenkurven
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hoehenkurvenonoff">
+                            <label class="onoffswitch-label" for="hoehenkurvenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Fels
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="felsonoff">
+                            <label class="onoffswitch-label" for="felsonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Relief
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="reliefonoff">
+                            <label class="onoffswitch-label" for="reliefonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Landeskarte
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="landeskarteonoff">
+                            <label class="onoffswitch-label" for="landeskarteonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Satelitenbild
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="satelitenbildonoff">
+                            <label class="onoffswitch-label" for="satelitenbildonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
                 </ul>
 
-                <ul menuLevel="2"  id="themen">
+                <ul menuLevel="2"  id="themen" class="list">
                     <li><a linkTo="natur_und_umwelt" href="#">Natur & Umwelt</a></li>
                     <li><a linkTo="gesellschaft" href="#">Gesellschaft</a></li>
                     <li><a linkTo="wirtschaft" href="#">Wirtschaft</a></li>
@@ -126,28 +270,28 @@
                     <li><a linkTo="energie_und_kommunikation" href="#">Energie & Kommunikation</a></li>
                 </ul>
 
-                <ul menuLevel="2" id="legende">
+                <ul menuLevel="2" id="legende" class="list">
                     <li>Karte 1</li>
                     <li>Karte 2</li>
                     <li>Karte 3</li>
                     <li>Karte 4</li>
                 </ul>
 
-                <ul menuLevel="2" id="beschriftung">
+                <ul menuLevel="2" id="beschriftung" class="list">
                     <li>Beschriftung 1</li>
                     <li>Beschriftung 2</li>
                     <li>Beschriftung 3</li>
                     <li>Beschriftung 4</li>
                 </ul>
 
-                <ul menuLevel="2" id="einstellungen">
+                <ul menuLevel="2" id="einstellungen" class="list">
                     <li>Einstellungen 1</li>
                     <li>Einstellungen 2</li>
                     <li>Einstellungen 3</li>
                     <li>Einstellungen 4</li>
                 </ul>
 
-                <ul menuLevel="2" id="hilfe">
+                <ul menuLevel="2" id="hilfe" class="list">
                     <li>Hilfe 1</li>
                     <li>Hilfe 2</li>
                     <li>Hilfe 3</li>
@@ -155,7 +299,7 @@
                 </ul>
 
                 <!-- Menu -> Themen -> Natur & Umwelt -->
-                <ul menuLevel="3" id="natur_und_umwelt">
+                <ul menuLevel="3" id="natur_und_umwelt" class="list">
                     <li>Wetter und Klima</li>
                     <li>Wasser</li>
                     <li>Eis und Schnee</li>
@@ -168,7 +312,7 @@
 
                 <!-- Menu -> Themen ->  Gesellschaft -->
 
-                <ul menuLevel="3" id="gesellschaft">
+                <ul menuLevel="3" id="gesellschaft" class="list">
                     <li><a linkTo="bevoelkerung" href="#">Bevölkerung</a></li>
                     <li>Sprache</li>
                     <li>Religion</li>
@@ -178,7 +322,7 @@
                 </ul>
 
                 <!-- Menu -> Themen ->  Gesellschaft -> Bevölkerung -->
-                <ul menuLevel="4" id="bevoelkerung">
+                <ul menuLevel="4" id="bevoelkerung" class="list">
                     <li><a linkTo="stand" href="#">Stand</a></li>
                     <li><a linkTo="entwicklung" href="#">Entwicklung</a></li>
                     <li><a linkTo="dichte_und_verteilung" href="#">Dichte und Verteilung</a></li>
@@ -188,21 +332,21 @@
 
                 <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Stand -->
 
-                <ul menuLevel="5" id="stand">
+                <ul menuLevel="5" id="stand" class="list">
                     <li><a linkTo="stand_bevoelkerung_jaehrliche_angaben" href="#">Bevölkerung: Jährliche Angaben</a></li>
                     <li><a linkTo="stand_volkszaehlungen" href="#">Volkszählungen</a></li>
                 </ul>
 
                 <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Entwicklung -->
 
-                <ul menuLevel="5" id="entwicklung">
+                <ul menuLevel="5" id="entwicklung" class="list">
                     <li><a linkTo="entwicklung_bevoelkerung_jaehrliche_angaben" href="#">Bevölkerung: Jährliche Angaben</a></li>
                     <li><a linkTo="entwicklung_volkszaehlungen" href="#">Volkszählungen</a></li>
                 </ul>
 
                 <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Dichte und Verteilung -->
 
-                <ul menuLevel="5" id="dichte_und_verteilung">
+                <ul menuLevel="5" id="dichte_und_verteilung" class="list">
                     <li><a linkTo="bevoelkerungsdichte_aktuell" href="#">Bevölkerungsdichte: Aktuell</a></li>
                     <li><a linkTo="dichte_volkszaehlungen" href="#">Dichte: Volkszählungen</a></li>
                     <li><a linkTo="bevoelkerungsverteilung"href="#">Bevölkerungsverteilung</a></li>
@@ -210,7 +354,7 @@
 
                 <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Alter -->
 
-                <ul menuLevel="5" id="alter">
+                <ul menuLevel="5" id="alter" class="list">
                     <li>0- bis 14-Jährige</li>
                     <li>15- bis 64-Jährige</li>
                     <li>über 64-Jährige</li>
@@ -228,7 +372,7 @@
 
                 <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Geschlecht -->
 
-                <ul menuLevel="5" id="geschlecht">
+                <ul menuLevel="5" id="geschlecht" class="list">
                     <li>Geschlechtsverteilung: Frauen</li>
                     <li>0- bis 14-jährige Mädchen</li>
                     <li>15- bis 64-jährige Frauen</li>
@@ -241,7 +385,7 @@
 
                 <!-- Menu -> Themen -> Wirtschaft -->
 
-                <ul menuLevel="3" id="wirtschaft">
+                <ul menuLevel="3" id="wirtschaft" class="list">
                     <li>Arbeit</li>
                     <li>Landwirtschaft</li>
                     <li>Industrie</li>
@@ -251,7 +395,7 @@
                 </ul>
 
                 <!-- Menu -> Themen -> Staat und Politik -->
-                <ul menuLevel="3" id="staat_und_politik">
+                <ul menuLevel="3" id="staat_und_politik" class="list">
                     <li>Raumgliederungen</li>
                     <li>Abstimmungen</li>
                     <li>Parlamentswahlen</li>
@@ -259,7 +403,7 @@
                 </ul>
 
                 <!-- Menu -> Themen -> Verkehr -->
-                <ul menuLevel="3" id="verkehr" >
+                <ul menuLevel="3" id="verkehr" class="list">
                     <li>Flugverkehr</li>
                     <li>Strassenverkehr</li>
                     <li>Schienenverkehr</li>
@@ -271,234 +415,18 @@
 
                 <!-- Menu -> Themen -> Energie und Kommunikation -->
 
-                <ul menuLevel="3" id="energie_und_kommunikation">
+                <ul menuLevel="3" id="energie_und_kommunikation" class="list">
                     <li>Primär-Energie</li>
                     <li>Sekundär-Energie</li>
                     <li>Energiewirtschaft</li>
                     <li>Kommunikation</li>
                 </ul>
             </div>
-<!-- SEARCH -->
-            <div class="livesearch container container_10">
-                <div class="one-fifth">
-                    <form class ="searchform" method="get" autocomplete="off">
-                        <div class="filtercontainer">
-                            <strong>Suche nach:</strong>
-                            <ul class="filterlist list">
-                                <li><input type="checkbox" value="seen" checked> Seen</li>
-                                <li><input type="checkbox" value="fluesse" checked> Flüsse</li>
-                                <li><input type="checkbox" value="themen" checked> Themen</li>
-                                <li><input type="checkbox" value="staedte" checked> Städte/Ortschaften</li>
-                                <li><input type="checkbox" value="bahnlinien" checked> Bahnlinien</li>
-                                <li><input type="checkbox" value="bahnhoefe" checked> Bahnhöfe</li>
-                                <li><input type="checkbox" value="strassen" checked> Strassen</li>
-                                <li><input type="checkbox" value="berge" checked> Berge</li>
-                                <li><input type="checkbox" value="paesse" checked> Pässe</li>
-                                <li><input type="checkbox" value="seilbahnen" checked> Seilbahnen</li>
-                                <li><input type="checkbox" value="gletscher" checked> Gletscher</li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <div class="four-fifth">
-                    <div class="one-fifth resultcontainer seen">
-                        <strong>Seen</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>Genfersee</li>
-                            <li>Zürichsee</li>
-                            <li>Thunersee</li>
-                            <li>Bielersee</li>
-                            <li>Sempachersee</li>
-                            <li>Greifensee</li>
-                            <li>Ägerisee</li>
-                            <li>Silsersee</li>
-                            <li>Silvaplanersee</li>
-                            <li>Bodensee</li>
-                        </ul>
-                    </div>
-                    <div class="one-fifth resultcontainer fluesse">
-                        <strong>Flüsse</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>Aare</li>
-                            <li>Rhein</li>
-                            <li>Rhone</li>
-                            <li>Reuss</li>
-                            <li>Limmat</li>
-                            <li>Inn</li>
-                            <li>Saane</li>
-                            <li>Thur</li>
-                            <li>Ticino</li>
-                            <li>Doubs</li>
-                        </ul>
-                    </div>
-                    <div class="two-fifth resultcontainer themen">
-                        <strong>Themen</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>Bevölkerungsdichte: Aktuelle Erhebungen</li>
-                            <li>Mittlere Wohnbevölkerung: Aktuelle Erhebungen</li>
-                            <li>Berghütten: Höhenlage</li>
-                            <li>Raumgliederung nach Gemeinden</li>
-                            <li>Raumgliederung nach Bezirken</li>
-                            <li>Raumgliederung nach Kantonen</li>
-                            <li>Standorte der Fluganlagen</li>
-                            <li>Standorte der Flugsicherungs- und Flugnavigationsanlagen</li>
-                            <li>Reisezeiten öffentlicher Verkehr für verschiedene Ausgangsgemeinden</li>
-                            <li>Windkraftanlagen: Leistung nach Höhenlage</li>
-                        </ul>
-                    </div>
-                    <div class="one-fifth resultcontainer staedte">
-                        <strong>Städte/Ortschaften</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>Aach</li>
-                            <li>Bettlach</li>
-                            <li>Chalais</li>
-                            <li>Evillers</li>
-                            <li>Flims</li>
-                            <li>Grosio</li>
-                            <li>Lausanne</li>
-                            <li>Nufenen</li>
-                            <li>Rugell</li>
-                            <li>Zürich</li>
-                        </ul>
-                    </div>
-                    <div class="one-fifth resultcontainer bahnlinien">
-                        <strong>Bahnlinien</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>St.Gallen - Gais</li>
-                            <li>Zürich - Basel</li>
-                            <li>St.Moritz - Pontresina</li>
-                            <li>Sur - Lenzburg</li>
-                            <li>Illanz - Trun</li>
-                            <li>Rupperswil - Lenzburg</li>
-                            <li>Romanshorn Süd [Abzweigung Egnach] - Romanshorn</li>
-                            <li>Mulhouse-Dornach Ouest - Rixheim [Mulhouse] Ouest</li>
-                            <!-- <li>Erba - Canzo</li>
-                            <li>Dübendorf - Uster</li> -->
-                        </ul>
-                    </div>
-                    <div class="one-fifth resultcontainer bahnhoefe">
-                        <strong>Bahnhöfe</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>St.Gallen</li>
-                            <li>Genf</li>
-                            <li>Zürich</li>
-                            <li>Heerbrugg</li>
-                            <li>Zürich Affoltern</li>
-                            <li>Affoltern am Albis</li>
-                            <li>Fribourg</li>
-                            <li>Aach</li>
-                            <li>Payerne</li>
-                            <li>Lausanne</li>
-                        </ul>
-                    </div>
-                    <div class="one-fifth resultcontainer strassen">
-                        <strong>Strassen</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>1 (CH)</li>
-                            <li>3 (CH)</li>
-                            <li>7 (CH)</li>
-                            <li>1a (CH)</li>
-                            <li>1H (CH)</li>
-                            <li>H18 (CH)</li>
-                            <li>T14 (CH)</li>
-                            <li>H2 (CH)</li>
-                            <li>4a (CH)</li>
-                            <li>50 (CH)</li>
-                        </ul>
-                    </div>
-                    <div class="one-fifth resultcontainer berge">
-                        <strong>Berge</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>Dufourspitze</li>
-                            <li>Dom</li>
-                            <li>Liskamm</li>
-                            <li>Weisshorn</li>
-                            <li>Matterhorn</li>
-                            <li>Dent Blanche</li>
-                            <li>Grand Combin</li>
-                            <li>Finsteraarhorn</li>
-                            <li>Zinalrothorn</li>
-                            <li>Alphubel</li>
-                        </ul>
-                    </div>
-                    <div class="one-fifth resultcontainer paesse">
-                        <strong>Pässe</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>Susten</li>
-                            <li>Splügen</li>
-                            <li>Klausen</li>
-                            <li>Gotthard</li>
-                            <li>Grimsel</li>
-                            <li>Oberalp</li>
-                            <li>Flüela</li>
-                            <li>Lukmanier</li>
-                            <li>Bernina</li>
-                            <li>Albula</li>
-                        </ul>
-                    </div>
-                    <div class="one-fifth resultcontainer seilbahnen">
-                        <strong>Seilbahnen</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>Arosa - Weisshorn</li>
-                            <li>Davos - Jakobshorn</li>
-                            <li>Chur - Brambrüesch</li>
-                            <li>Trübsee - Titlis</li>
-                            <li>Flims - Foppa</li>
-                            <li>Wallis - Vercorin</li>
-                            <li>Parsennhütte - Weissfluhjoch</li>
-                            <li>Embd - Schalb</li>
-                            <li>Intschi - Arnisee</li>
-                            <li>Frümsen - Stauberen</li>
-                        </ul>
-                    </div>
-                    <div class="one-fifth resultcontainer gletscher">
-                        <strong>Gletscher</strong>
-                        <hr>
-                        <ul class="searchlist list">
-                            <li>Allalin</li>
-                            <li>Fee</li>
-                            <li>Gauli</li>
-                            <li>Gorner</li>
-                            <li>Findelen</li>
-                            <li>Kander</li>
-                            <li>Morteratsch</li>
-                            <li>Rhone</li>
-                            <li>Zinal</li>
-                            <li>Oberaletsch</li>
-                        </ul>
-                    </div>
-                </div>
+            <div id="kartenvorschau">
+                    <img src="../img/kartenvorschau/stand_bevoelkerung_jaehrliche_angaben.PNG" alt="">
+                    <button id="button_karte_auswaehlen">auswählen</button>
             </div>
         </nav>
-            <button class="icon themen" id="menuButton">menu</button>
-        <div id="bottomLeftMenu">
-            <button class="icon" id="timeline">time</button>
-            <button class="icon" id="dimensionswechsel">3d</button>
-            <button class="icon" id="ausrichten">ausrichten</button>
-        </div>
-            <div id="kartenFarben">
-            
-        </div>
-        </div>
-        <div class="hintergrund"></div>
-
-        
-
-
-
-
-
-
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

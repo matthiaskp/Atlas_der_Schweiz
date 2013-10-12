@@ -2,7 +2,6 @@ $( document ).ready(function() {
 
 	$('input').focus(function () {
 		$(this).parent().css('width','100%');
-		$(this).css('width','20%');
 		$('.menu').hide();
 		$('.livesearch').show();
 	})
@@ -18,17 +17,26 @@ $( document ).ready(function() {
 
 	// SET BODY HEIGHT
 	setBodySize();
+	setSearchSize();
 
 	$( window ).resize(function() {
 		setBodySize();
+		setSearchSize();
 	});
 	$( window ).on( "orientationchange", function( event ) {
 		setBodySize();
+		setSearchSize();
 	});
 	function setBodySize () {
 		var height = $(window).height();
 		$('body').css('height',height);
 	}
+	function setSearchSize () {
+		var width = $(window).width();
+		$('#suchFeld').css('width',width/5);
+	}
+
+
 
 	// --------------------------------SEARCH
 

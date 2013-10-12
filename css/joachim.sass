@@ -8,8 +8,9 @@ $hovercolor: #6dbcdb
 $activecolor: #fc4349
 $gutter: 20px
 $lightgray: #d7dadb
+$transparentwhite: rgba(255,255,255,0.95)
 
-//RETINA IMAGE MIXIN
+//MIXINS
 @mixin at2x($image_name, $w: auto, $h: auto, $extention: '.png')
 	background-image: url("../img/" + $image_name + $extention)
 	background-size: $w $h
@@ -18,6 +19,21 @@ $lightgray: #d7dadb
 	@media all and (-webkit-min-device-pixel-ratio : 1.5)
 		background-image: url("../img/" + $x2img)
 		background-size: $w $h
+
+@mixin border-radius ( $value: 3px )
+	-webkit-border-radius: $value
+	-moz-border-radius: $value
+	border-radius: $value
+	// keeps background from busting out of border 
+	-webkit-background-clip: padding-box
+	-moz-background-clip: padding
+	background-clip: padding-box
+
+@mixin box-shadow( $horiz : .5em , $vert : .5em , $blur : 0px , $spread : 0px , $color : #000000 )
+	-webkit-box-shadow: $horiz $vert $blur $spread $color
+	-moz-box-shadow: $horiz $vert $blur $spread $color
+	box-shadow: $horiz $vert $blur $spread $color
+
 
 //LAYOUT STYLES
 .fullheight
@@ -258,3 +274,128 @@ body.helper
 		z-index: 10
 		top: 20px
 		right: 20px
+
+/***********************************Menu*/
+.menuContainer
+	overflow-x: hidden
+	position: absolute
+	left: 0
+	top: 0
+	bottom: 0
+	background-color: $transparentwhite
+	@include box-shadow(1px,0,3px,0,rgba(0,0,0,0.5))
+
+.menuContainerVisible
+	top: 0px
+	left: 0%
+	/*height: 100%*/
+	width: 20%
+	transition: all 0.5s
+	-webkit-transition: all 0.5s
+
+.menuContainerHidden
+	/*height: 0px*/
+	width: 0px
+	left: -20%
+	transition: all 0.5s
+	-webkit-transition: all 0.5s
+
+.menu
+	position: absolute
+	width: 500%
+	transition: all 0.5s
+	-webkit-transition: all 0.5s
+	ul
+		padding-left: 20px
+		padding-right: 20px
+		float: left
+		width: 20%
+		box-sizing: border-box
+		li
+			.onoffswitch
+				display: inline
+				float: right
+
+			a
+				text-decoration: none
+				color: $textcolor
+				display: inline-block
+				span
+					padding-right: 10px
+					img
+						width: 22px
+						height: 22px
+.menuLinkActive
+	color: #3ad8cf
+	font-weight: bold
+/*				border-radius: 8px
+	-webkit-border-radius: 8px
+	-moz-border-radius: 8px
+	background-color: rgba(255,255,255,0.8)*/
+
+
+.menuIsVisible
+	display: inline
+
+.menuIsHidden
+	display: none
+
+#menu
+	display: inline
+
+#menuTitel
+	display: none
+	background-color: $lightgray
+	box-sizing: border-box
+	padding: 20px
+	h2
+		margin: 0
+
+	
+#suchFeld
+	box-sizing: border-box
+	height: 35px
+	background: $lightgray
+	color: $textcolor
+	font-family: 'robotolight'
+	border: none
+	padding: 0 20px
+	&::-webkit-input-placeholder
+		color: $textcolor
+		font-family: 'robotolight'
+
+#zurueckButton
+	display: none
+	margin: 10px
+	float: left
+#menu_schliessen
+	float: right
+	margin: 10px
+	
+#basiskarte>li
+	padding-bottom: 10px
+	button
+		position: relative
+		float: right
+		margin-top: -10px
+		padding-right: 2%
+/***********************************Kartenvorschau*/
+
+#kartenvorschau
+	background-color: $lightgray
+	display: none
+	position: absolute
+	bottom: 0
+	left: 0
+	right: 0
+	float: right
+	padding: 20px
+	box-sizing: border-box
+	img
+		width: 100%
+	button
+		width: auto
+		margin-top: 10px
+		background-color: $hovercolor
+		float: right
+

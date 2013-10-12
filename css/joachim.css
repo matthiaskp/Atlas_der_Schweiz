@@ -11,7 +11,7 @@ div.icon {
     background-image: url("../img/icons/icon_themen.png");
     background-size: 100% 100%;
     top: 0; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       div.icon:before {
         background-image: url("../img/icons/icon_themen@2x.png");
         background-size: 100% 100%; } }
@@ -35,56 +35,56 @@ div.icon {
     top: 2px;
     background-image: url("../img/icons/icon_themen.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon:before {
         background-image: url("../img/icons/icon_themen@2x.png");
         background-size: 100% 100%; } }
   .icon.themen:before {
     background-image: url("../img/icons/icon_themen.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon.themen:before {
         background-image: url("../img/icons/icon_themen@2x.png");
         background-size: 100% 100%; } }
   .icon.basiskarte:before {
     background-image: url("../img/icons/icon_basiskarte.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon.basiskarte:before {
         background-image: url("../img/icons/icon_basiskarte@2x.png");
         background-size: 100% 100%; } }
   .icon.legende:before {
     background-image: url("../img/icons/icon_legende.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon.legende:before {
         background-image: url("../img/icons/icon_legende@2x.png");
         background-size: 100% 100%; } }
   .icon.beschriftung:before {
     background-image: url("../img/icons/icon_beschriftung.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon.beschriftung:before {
         background-image: url("../img/icons/icon_beschriftung@2x.png");
         background-size: 100% 100%; } }
   .icon.einstellungen:before {
     background-image: url("../img/icons/icon_einstellungen.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon.einstellungen:before {
         background-image: url("../img/icons/icon_einstellungen@2x.png");
         background-size: 100% 100%; } }
   .icon.about:before {
     background-image: url("../img/icons/icon_about.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon.about:before {
         background-image: url("../img/icons/icon_about@2x.png");
         background-size: 100% 100%; } }
   .icon.hilfe:before {
     background-image: url("../img/icons/icon_hilfe.png");
     background-size: 100% 100%; }
-    @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
       .icon.hilfe:before {
         background-image: url("../img/icons/icon_hilfe@2x.png");
         background-size: 100% 100%; } }
@@ -93,49 +93,49 @@ div.icon {
     .icon.big.themen:before {
       background-image: url("../img/icons/icon_themen_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.themen:before {
           background-image: url("../img/icons/icon_themen_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big.basiskarte:before {
       background-image: url("../img/icons/icon_basiskarte_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.basiskarte:before {
           background-image: url("../img/icons/icon_basiskarte_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big.beschriftung:before {
       background-image: url("../img/icons/icon_beschriftung_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.beschriftung:before {
           background-image: url("../img/icons/icon_beschriftung_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big.legende:before {
       background-image: url("../img/icons/icon_legende_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.legende:before {
           background-image: url("../img/icons/icon_legende_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big.einstellungen:before {
       background-image: url("../img/icons/icon_einstellungen_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.einstellungen:before {
           background-image: url("../img/icons/icon_einstellungen_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big.startseite:before {
       background-image: url("../img/icons/icon_startseite_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.startseite:before {
           background-image: url("../img/icons/icon_startseite_big@2x.png");
           background-size: 100% 100%; } }
     .icon.big.hilfe:before {
       background-image: url("../img/icons/icon_hilfe_big.png");
       background-size: 100% 100%; }
-      @media all and (-webkit-min-device-pixel-ratio: 1.5) {
+      @media all and (-webkit-min-device-pixel-ratio : 1.5) {
         .icon.big.hilfe:before {
           background-image: url("../img/icons/icon_hilfe_big@2x.png");
           background-size: 100% 100%; } }
@@ -313,3 +313,127 @@ body.helper {
     body.helper .helper p {
       border: none;
       padding: 0 20px; }
+
+/**********************************Menu */
+.menuContainer {
+  overflow-x: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  -webkit-box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.5); }
+
+.menuContainerVisible {
+  top: 0px;
+  left: 0%;
+  /*height: 100% */
+  width: 20%;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
+
+.menuContainerHidden {
+  /*height: 0px */
+  width: 0px;
+  left: -20%;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
+
+.menu {
+  position: absolute;
+  width: 500%;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
+  .menu ul {
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    width: 20%;
+    box-sizing: border-box; }
+    .menu ul li .onoffswitch {
+      display: inline;
+      float: right; }
+    .menu ul li a {
+      text-decoration: none;
+      color: #2c3e50;
+      display: inline-block; }
+      .menu ul li a span {
+        padding-right: 10px; }
+        .menu ul li a span img {
+          width: 22px;
+          height: 22px; }
+
+.menuLinkActive {
+  color: #3ad8cf;
+  font-weight: bold; }
+
+/*				border-radius: 8px
+ * -webkit-border-radius: 8px
+ * -moz-border-radius: 8px
+ * background-color: rgba(255,255,255,0.8) */
+.menuIsVisible {
+  display: inline; }
+
+.menuIsHidden {
+  display: none; }
+
+#menu {
+  display: inline; }
+
+#menuTitel {
+  display: none;
+  background-color: #d7dadb;
+  box-sizing: border-box;
+  padding: 20px; }
+  #menuTitel h2 {
+    margin: 0; }
+
+#suchFeld {
+  box-sizing: border-box;
+  height: 35px;
+  background: #d7dadb;
+  color: #2c3e50;
+  font-family: "robotolight";
+  border: none;
+  padding: 0 20px; }
+  #suchFeld::-webkit-input-placeholder {
+    color: #2c3e50;
+    font-family: "robotolight"; }
+
+#zurueckButton {
+  display: none;
+  margin: 10px;
+  float: left; }
+
+#menu_schliessen {
+  float: right;
+  margin: 10px; }
+
+#basiskarte > li {
+  padding-bottom: 10px; }
+  #basiskarte > li button {
+    position: relative;
+    float: right;
+    margin-top: -10px;
+    padding-right: 2%; }
+
+/**********************************Kartenvorschau */
+#kartenvorschau {
+  background-color: #d7dadb;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  float: right;
+  padding: 20px;
+  box-sizing: border-box; }
+  #kartenvorschau img {
+    width: 100%; }
+  #kartenvorschau button {
+    width: auto;
+    margin-top: 10px;
+    background-color: #6dbcdb;
+    float: right; }
