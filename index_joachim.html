@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -27,7 +27,7 @@
                  and (-webkit-device-pixel-ratio: 2)"
               rel="apple-touch-startup-image">
 
-        
+        <link href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/grid.css">
@@ -42,6 +42,7 @@
         <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </head>
     <body class="container container_10" style="background-image: url(img/schweiz_default.png); background-size: 100% 100%;">
+        <!-- MENU -->
         <nav class="one-fifth menuContainer">
             <header>
                 <div class="menucontrols clearfix">
@@ -427,10 +428,49 @@
                     <button id="button_karte_auswaehlen">auswählen</button>
             </div>
         </nav>
+        <!-- LAYERMANAGER -->
+        <script type="text/html" id="layerTemplate">
+            <div class="grid_3 prefix_7">
+                <div class="layer <%= layerClass %>" data-layer="<%= layerClass %>">
+                    <header>
+                        <p class="icon <%= layerIcon %>"><%= layerTitle %></p>
+                    </header>
+                    <div class="controls">
+                        <div class="grid_7">
+                            Deckkraft
+                            <div data-slider="<%= layerClass %>" class="opacityslider"></div>
+                        </div>
+                        <div class="grid_3">
+                            Sichtbar
+                            <div class="onoffswitch">
+                                <input type="checkbox" data-layer="<%= layerClass %>" name="onoffswitch" class="onoffswitch-checkbox" id="onoff-<%= layerClass %>" checked>
+                                <label class="onoffswitch-label" for="onoff-<%= layerClass %>">
+                                    <div class="onoffswitch-inner"></div>
+                                    <div class="onoffswitch-switch"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </script>
+        <div class="layercontainer">    
+        </div>
+        <!-- LAYERS -->
+        <script type="text/html" id="bgLayerTemplate">
+            <div class="bglayer" id="<%= layerClass %>" style="background-image: <%= imageBackground %>;"></div>
+        </script>
+        <div class="bglayercontainer">
+            
+        </div>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script src="js/vendor/jquery.ui.touch-punch.min.js"></script>
+        <script src="js/vendor/underscore.js"></script>
         <script src="js/joachim.js"></script>
         <script src="js/matthias.js"></script>
         <script src="js/ramun.js"></script>

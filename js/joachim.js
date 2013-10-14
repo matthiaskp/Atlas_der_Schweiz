@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-	$('input').focus(function () {
+	$('#suchFeld').focus(function () {
 		$(this).parent().css('width','100%');
 		$('.menu').hide();
 		$('.livesearch').show();

@@ -316,6 +316,7 @@ body.helper {
 
 /**********************************Menu */
 .menuContainer {
+  z-index: 5;
   overflow-x: hidden;
   position: absolute;
   left: 0;
@@ -364,15 +365,9 @@ body.helper {
         .menu ul li a span img {
           width: 22px;
           height: 22px; }
+      .menu ul li a.menuLinkActive {
+        color: #fc4349; }
 
-.menuLinkActive {
-  color: #3ad8cf;
-  font-weight: bold; }
-
-/*				border-radius: 8px
- * -webkit-border-radius: 8px
- * -moz-border-radius: 8px
- * background-color: rgba(255,255,255,0.8) */
 .menuIsVisible {
   display: inline; }
 
@@ -433,7 +428,69 @@ body.helper {
   #kartenvorschau img {
     width: 100%; }
   #kartenvorschau button {
+    font-family: "robotolight";
     width: auto;
     margin-top: 10px;
+    padding: 0 20px;
     background-color: #6dbcdb;
     float: right; }
+
+.layer {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  overflow: hidden;
+  background-color: white;
+  margin-top: 20px;
+  padding: 0 10px;
+  z-index: 20; }
+  .layer header p {
+    margin: 10px 0; }
+  .layer .controls {
+    height: 60px;
+    padding-top: 10px; }
+  .layer .ui-slider-range {
+    background: #6dbcdb; }
+
+.opacityslider {
+  margin-right: 20px;
+  margin-top: 11px;
+  height: 5px;
+  border: none;
+  background: #d7dadb; }
+  .opacityslider a.ui-slider-handle {
+    background: white;
+    -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    top: -8px;
+    height: 20px;
+    width: 20px;
+    cursor: pointer; }
+
+.bglayercontainer {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -10; }
+  .bglayercontainer .bglayer {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red; }
