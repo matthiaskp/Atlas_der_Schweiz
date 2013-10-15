@@ -272,17 +272,17 @@
                 </ul>
 
                 <ul menuLevel="2" id="legende" class="list">
-                    <li>Karte 1</li>
-                    <li>Karte 2</li>
-                    <li>Karte 3</li>
-                    <li>Karte 4</li>
+                    <h4>Bevölkerungsdichte: Aktuell</h4>
+                    <h5>Dichte [Personen/km&sup2;]</h5>
+                    <img src="img/Legende.PNG" alt="">
                 </ul>
 
                 <ul menuLevel="2" id="beschriftung" class="list">
-                    <li>Beschriftung 1</li>
-                    <li>Beschriftung 2</li>
-                    <li>Beschriftung 3</li>
-                    <li>Beschriftung 4</li>
+                    <li>Städte/Ortschaften</li>
+                    <li>Gewässer</li>
+                    <li>Berge</li>
+                    <li>Gletscher</li>
+                    <li>Regionen</li>
                 </ul>
 
                 <ul menuLevel="2" id="einstellungen" class="list">
@@ -428,51 +428,12 @@
                     <button id="button_karte_auswaehlen">auswählen</button>
             </div>
         </nav>
-        <!-- INFO -->
-        <div class="infocontainer two-fifth">
-            <h2>Info</h2>
-            <h3>Klasse 3c Zürich Wiedikon</h3>
-            <ul>
-                <li>Gletscher in der Eiszeit</li>
-                <li>Die Bevölkerungsentwicklung von Zürich</li>
-                <li>Überalterung und Bevölkerungswachstum</li>
-                <li>Tourismusland Schweiz</li>
-                <li>Wasser und Strom - unsere Ressourcen</li>
-                <li>Die Schweiz als Industrieland</li>
-            </ul>
-
-            <h3>Atlas der Schweiz: Themen</h3>
-            <ul>
-                <li>Gefahren des schmelzenden Permafrostes</li>
-                <li>Zersiedelung und Mobilität - eine Herausforderung?</li>
-                <li>Der Jahrhundertsommer 2003 uns seine Konsequenzen</li>
-                <li>Die Globalisierung bringt neue Vögel und lässt alte aussterben</li>
-            </ul>
-
-            <div id="ueberalterung">
-                <h3>Überalterung und Bevölkerungswachstum</h3>
-                <p>Seit 2007 wächst die Wohnbevölkerung der Schweiz jedes Jahr um 88‘000 Personen (dies entspricht der Stadt Luzern). Jede Sekunde wird hierzulande ein Quadratmeter Naturfläche zubetoniert. - Die Weltbevölkerung nimmt jeden Tag um 220‘000 Menschen zu.<br><br>
-                Mit diesem starken Bevölkerungswachstum, hier wie weltweit, verbauen wir unseren Kindern im wahrsten Sinne des Wortes die Zukunft!
-                <img src="img/infomaterial/uebervoelkerung_1.jpg" alt="">
-                Im Laufe des 20. Jahrhunderts ist die Zahl der älteren Menschen gestiegen, während die Anteile der Jugendlichen und der Personen im erwerbsfähigen Alter (20 bis 64 Jahre) gesunken sind. Die Form der Alterspyramide hat sich dabei von einer «Pyramide» (1900) über eine «Glocke» (1950) zu einer «Tanne» (2010) gewandelt. Für die Schweiz ist heute ein Altersaufbau typisch, bei dem die «Baby-Boom»-Generation dominiert. Ihr steht eine schwächer besetzte Jugendgeneration und eine wachsende Zahl älterer Menschen gegenüber.
-                <img src="img/infomaterial/altersaufbau.gif" alt="">
-                Eine Studie des Bundesamtes für Statistik zeigt, dass bis 2024 Jahren die Bevölkerung in der Schweiz um 12,5 Prozent zunehmen wird. Der Hauptgrund dafür ist die internationale Zuwanderung.
-                <iframe src='http://www.srf.ch/player/tv/tagesschau--vom-29-03-2011/videoembed/schweiz-bevoelkerung-waechst-weiter?id=aee2791d-d6be-4fd9-bb51-24280d085886&mode=embed' width='100%' height='200' frameborder='0' name='Tagesschau  vom 29.03.2011'></iframe>
-
-                </p>
-            </div>
-            <button class="icon info" id="infoCloseButton">close</button>
-        </div>
-        </div>
         <div class="interfacebuttons">
-            <button class="icon info" id="infoButton">info</button>
             <button class="icon themen" id="menuButton">menu</button>
             <div id="bottomLeftMenu">
-                <div class="timelinecontainer">
-                    <button class="icon" id="timelineButton">time</button>
-                </div>
-                <button class="icon" id="dimensionswechselButton">3d</button>
-                <button class="icon" id="ausrichtenButton">ausrichten</button>
+                <button class="icon" id="timeline">time</button>
+                <button class="icon" id="dimensionswechsel">3d</button>
+                <button class="icon" id="ausrichten">ausrichten</button>
             </div>
         </div>
         <div id="kartenFarben"></div>
