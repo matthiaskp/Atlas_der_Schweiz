@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
 ////////////////////////////GUI
 $("#menuButton").click( function() {
 		$(".menuContainer").addClass("menuContainerVisible").removeClass("menuContainerHidden");
@@ -21,36 +22,35 @@ $("#width").addClass("menuIsVisible").removeClass("menuIsHidden");
 $(".menu > ul > li > a").click(function(e){
 	console.log("------- click ------")
 	e.preventDefault();
-	// if(menuLevelActive!=1){
-	// 	$(".menu > ul > li > a").removeClass("menuLinkActive");
-	// 	$(this).addClass("menuLinkActive");
-	// };
+	if(menuLevelActive!=1){
+		$(".menu > ul > li > a").removeClass("menuLinkActive");
+		$(this).addClass("menuLinkActive");
+	};
 
 	var linkTo = $(this).attr("linkTo");
+	menuLevelClicked = parseInt($(this).parent().parent().attr("menuLevel"));
 
 	if(linkTo == "einstellungen" || linkTo == "about" || linkTo == "hilfe"){
+		$("#"+linkTo+"-overlay").removeClass("menu-overlay-is-hidden").addClass("div-is-active");
+		$("#"+linkTo+"-overlay").find(".menu-overlay-inner").removeClass("menu-overlay-inner-is-hidden").addClass("div-is-active");
 		menuSchliessen();
-		
 	}
 	else{
-		menuLevelClicked = parseInt($(this).parent().parent().attr("menuLevel"));
+		
 		//console.log("menuLevelClicked: "  + menuLevelClicked)
-
 		for (var i = (menuLevelClicked+1) ; i <= 5; i++) {
 			//console.log("levels removed");
 			$("[menuLevel='"+i+"']").addClass("menuIsHidden").removeClass("menuIsVisible");
 		};
-	}
+		/////////////Abschliessen der Click-Funktion
+		$("#" + linkTo).addClass("menuIsVisible").removeClass("menuIsHidden");
 
-
-/////////////Abschliessen der Click-Funktion
-$("#" + linkTo).addClass("menuIsVisible").removeClass("menuIsHidden");
-
-manageTitleAndBc($(this), menuLevelActive, menuLevelClicked); /////////////Anpassen des Menu-Titels
-menuLevelActive = menuLevelClicked+1;
-console.log("menuLevelActive:   " + menuLevelActive);
-lastMenu = linkTo;
-checkMenuLevel(menuLevelActive);
+		manageTitleAndBc($(this), menuLevelActive, menuLevelClicked); /////////////Anpassen des Menu-Titels
+		menuLevelActive = menuLevelClicked+1;
+		console.log("menuLevelActive:   " + menuLevelActive);
+		lastMenu = linkTo;
+		checkMenuLevel(menuLevelActive);
+	};
 });
 
 /////////////Zurück-Button
@@ -81,7 +81,7 @@ function menuSchliessen () {
 	checkMenuLevel(menuLevelActive,null);
 	$(".menuContainer").removeClass("menuContainerVisible two-fifth").addClass("menuContainerHidden one-fifth");
 	$(".menu").css("width", "500%");
-}
+};
 
 //////////////////////////// Kartenvorschau 
 $("ul[menulevel=5] > li > a").click(function(e){
@@ -118,6 +118,35 @@ $(".menu-to-overlay").click(function(e){
 	console.log(linkTo);
 
 });
+
+$(".menu-overlay-schliessen").click(function(e){
+	console.log("overlay Menu wird geschlossen");
+	e.preventDefault();
+	$(this).parent().parent().addClass("menu-overlay-is-hidden").removeClass("div-is-active");
+	$(this).parent().addClass("menu-overlay-inner-is-hidden").removeClass("div-is-active");;
+
+	// $("#div").addClass("error").delay(500).queue(function(next){
+ //    $(this).addClass("div-is-hidden");
+ //    next();
+	// });
+	// 	$(this).parent().parent().delay(500).queue(function(next){
+	//     $(this).addClass("div-is-hidden");
+	//     next();
+	// });
+	// 	$(this).parent().delay(500).queue(function(next){
+	//     $(this).addClass("div-is-hidden");
+	//     next();
+	// });
+});
+
+// $(".menu-overlay").click(function(e){
+// 	console.log("overlay Menu wird geschlossen");
+// 	e.preventDefault();
+// 	$(this).addClass("menu-overlay-is-hidden");
+// 	$(this).delay(500).fadeOut();
+// 	$(this).find(".menu-overlay-inner").addClass("menu-overlay-inner-is-hidden");
+// 	$(this).find(".menu-overlay-inner").delay(500).fadeOut();
+// });
 
 //////////////////////////// Check Menu Level Function
 
@@ -242,4 +271,5 @@ function getKartenFarben (kartenName){
 	};
 
 };
+
 
