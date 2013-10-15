@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Atlas der Schweiz - Mobile</title>
+        <meta name="description" content="">
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+
+        <!-- APPLE APP THINGS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <link rel="apple-touch-icon" href="apple-touch-icon-57x57-precomposed.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png" />
+        <!-- iPad (Retina) -->
+        <!-- <link href="startup.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image"> -->
+        <link href="startup.png"
+              media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: landscape)
+                 and (-webkit-device-pixel-ratio: 2)"
+              rel="apple-touch-startup-image">
+
+        <link href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/matthias.css">
+        <link rel="stylesheet" href="css/ramun.css">
+        <link rel="stylesheet" href="css/joachim.css">
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+    </head>
+    <body class="container container_10" style="background-image: url(img/schweiz_default.png); background-size: 100% 100%;">
+        <!-- MENU -->
+        <nav class="one-fifth menuContainer">
+            <header>
+                <div class="menucontrols clearfix">
+                    <button class="menubutton icon" id="zurueckButton"></button>
+                    <button class="menubutton icon" id="menu_schliessen"></button>
+                </div>
+                <input id="suchFeld" type="text" value="" placeholder="Suchen..."></input>
+                <div id="menuTitel">
+                    <h2 class="icon big themen">Themen</h2>
+                    <span class="smalltext">Verkehr > Schienenverkehr</span>
+                </div>
+            </header>
+            <div class="menu">
+                <ul menuLevel="1" id="menu" class="list">
+                    <li class="icon basiskarte">
+                        <a linkTo="basiskarte" href="#">Karte</a>
+                    </li>
+                    <li class="icon themen">
+                        <a linkTo="themen" href="#">Themen</a>
+                    </li>
+                    <li class="icon beschriftung">
+                        <a linkTo="beschriftung" href="#">Beschriftung</a>
+                    </li>
+                    <li class="icon legende">
+                        <a linkTo="legende" href="#">Legende</a>
+                    </li>
+                    <li class="icon einstellungen">
+                        <a linkTo="einstellungen" href="#">Einstellungen</a>
+                    </li>
+                    <li class="icon startseite">
+                        <a linkTo="startseite" href="#">About</a>
+                    </li>
+                    <li class="icon hilfe">
+                        <a linkTo="hilfe" href="#">Hilfe</a>
+                    </li>
+                </ul>
+                <!-- Menu -> Basiskarte -->
+                <ul menuLevel="2" id="basiskarte" class="list">
+                    <li>
+                        Seen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="seenonoff">
+                            <label class="onoffswitch-label" for="seenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>Flüsse
+                    <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="fluesseonoff">
+                            <label class="onoffswitch-label" for="fluesseonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Siedlungen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="siedlungenonoff">
+                            <label class="onoffswitch-label" for="siedlungenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Strassen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="strassenonoff">
+                            <label class="onoffswitch-label" for="strassenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Bahnlinien
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bahnlinienonoff">
+                            <label class="onoffswitch-label" for="bahnlinienonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Bahnhöfe
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bahnhoefeonoff">
+                            <label class="onoffswitch-label" for="bahnhoefeonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Seilbahnen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="seilbahnenonoff">
+                            <label class="onoffswitch-label" for="seilbahnenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Gemeinden
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="gemeindenonoff">
+                            <label class="onoffswitch-label" for="gemeindenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Bezirke
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bezirkeonoff">
+                            <label class="onoffswitch-label" for="bezirkeonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Kantone
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="kantoneonoff">
+                            <label class="onoffswitch-label" for="kantoneonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Landesgrenzen
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="landesgrenzenonoff">
+                            <label class="onoffswitch-label" for="landesgrenzenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Berge
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="bergeonoff">
+                            <label class="onoffswitch-label" for="bergeonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Pässe
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="paesseonoff">
+                            <label class="onoffswitch-label" for="paesseonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Höhenkurven
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="hoehenkurvenonoff">
+                            <label class="onoffswitch-label" for="hoehenkurvenonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Fels
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="felsonoff">
+                            <label class="onoffswitch-label" for="felsonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Relief
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="reliefonoff">
+                            <label class="onoffswitch-label" for="reliefonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Landeskarte
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="landeskarteonoff">
+                            <label class="onoffswitch-label" for="landeskarteonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        Satelitenbild
+                        <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="satelitenbildonoff">
+                            <label class="onoffswitch-label" for="satelitenbildonoff">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul menuLevel="2"  id="themen" class="list">
+                    <li><a linkTo="natur_und_umwelt" href="#">Natur & Umwelt</a></li>
+                    <li><a linkTo="gesellschaft" href="#">Gesellschaft</a></li>
+                    <li><a linkTo="wirtschaft" href="#">Wirtschaft</a></li>
+                    <li><a linkTo="staat_und_politik" href="#">Staat & Politik</a></li>
+                    <li><a linkTo="verkehr" href="#">Verkehr</a></li>
+                    <li><a linkTo="energie_und_kommunikation" href="#">Energie & Kommunikation</a></li>
+                </ul>
+
+                <ul menuLevel="2" id="legende" class="list">
+                    <li>Karte 1</li>
+                    <li>Karte 2</li>
+                    <li>Karte 3</li>
+                    <li>Karte 4</li>
+                </ul>
+
+                <ul menuLevel="2" id="beschriftung" class="list">
+                    <li>Beschriftung 1</li>
+                    <li>Beschriftung 2</li>
+                    <li>Beschriftung 3</li>
+                    <li>Beschriftung 4</li>
+                </ul>
+
+                <ul menuLevel="2" id="einstellungen" class="list">
+                    <li>Einstellungen 1</li>
+                    <li>Einstellungen 2</li>
+                    <li>Einstellungen 3</li>
+                    <li>Einstellungen 4</li>
+                </ul>
+
+                <ul menuLevel="2" id="hilfe" class="list">
+                    <li>Hilfe 1</li>
+                    <li>Hilfe 2</li>
+                    <li>Hilfe 3</li>
+                    <li>Hilfe 4</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Natur & Umwelt -->
+                <ul menuLevel="3" id="natur_und_umwelt" class="list">
+                    <li>Wetter und Klima</li>
+                    <li>Wasser</li>
+                    <li>Eis und Schnee</li>
+                    <li>Geologie und Rohstoffe</li>
+                    <li>Boden</li>
+                    <li>Landschaften</li>
+                    <li>Pflanzen</li>
+                    <li>Tiere</li>
+                </ul>
+
+                <!-- Menu -> Themen ->  Gesellschaft -->
+
+                <ul menuLevel="3" id="gesellschaft" class="list">
+                    <li><a linkTo="bevoelkerung" href="#">Bevölkerung</a></li>
+                    <li>Sprache</li>
+                    <li>Religion</li>
+                    <li>Bildung</li>
+                    <li>Gesundheit</li>
+                    <li>Haushalte</li>
+                </ul>
+
+                <!-- Menu -> Themen ->  Gesellschaft -> Bevölkerung -->
+                <ul menuLevel="4" id="bevoelkerung" class="list">
+                    <li><a linkTo="stand" href="#">Stand</a></li>
+                    <li><a linkTo="entwicklung" href="#">Entwicklung</a></li>
+                    <li><a linkTo="dichte_und_verteilung" href="#">Dichte und Verteilung</a></li>
+                    <li><a linkTo="alter" href="#">Alter</a></li>
+                    <li><a linkTo="geschlecht" href="#">Geschlecht</a></li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Stand -->
+
+                <ul menuLevel="5" id="stand" class="list">
+                    <li><a linkTo="stand_bevoelkerung_jaehrliche_angaben" href="#">Bevölkerung: Jährliche Angaben</a></li>
+                    <li><a linkTo="stand_volkszaehlungen" href="#">Volkszählungen</a></li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Entwicklung -->
+
+                <ul menuLevel="5" id="entwicklung" class="list">
+                    <li><a linkTo="entwicklung_bevoelkerung_jaehrliche_angaben" href="#">Bevölkerung: Jährliche Angaben</a></li>
+                    <li><a linkTo="entwicklung_volkszaehlungen" href="#">Volkszählungen</a></li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Dichte und Verteilung -->
+
+                <ul menuLevel="5" id="dichte_und_verteilung" class="list">
+                    <li><a linkTo="bevoelkerungsdichte_aktuell" href="#">Bevölkerungsdichte: Aktuell</a></li>
+                    <li><a linkTo="dichte_volkszaehlungen" href="#">Dichte: Volkszählungen</a></li>
+                    <li><a linkTo="bevoelkerungsverteilung"href="#">Bevölkerungsverteilung</a></li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Alter -->
+
+                <ul menuLevel="5" id="alter" class="list">
+                    <li>0- bis 14-Jährige</li>
+                    <li>15- bis 64-Jährige</li>
+                    <li>über 64-Jährige</li>
+                    <li>0- bis 9-Jährige</li>
+                    <li>10- bis 19-Jährige</li>
+                    <li>20- bis 29-Jährige</li>
+                    <li>30- bis 39-Jährige</li>
+                    <li>40- bis 49-Jährige</li>
+                    <li>50- bis 59-Jährige</li>
+                    <li>60- bis 69-Jährige</li>
+                    <li>70- bis 79-Jährige</li>
+                    <li>80- bis 89-Jährige</li>
+                    <li>90- bis 99-Jährige</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Gesellschaft -> Bevölkerung -> Geschlecht -->
+
+                <ul menuLevel="5" id="geschlecht" class="list">
+                    <li>Geschlechtsverteilung: Frauen</li>
+                    <li>0- bis 14-jährige Mädchen</li>
+                    <li>15- bis 64-jährige Frauen</li>
+                    <li>über 64-jährige Frauen</li>
+                    <li>Geschlechtsverteilung: Männer</li>
+                    <li>0- bis 14-jährige Knaben</li>
+                    <li>15- bis 64-jährige Männer</li>
+                    <li>über 64-jährige Männer</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Wirtschaft -->
+
+                <ul menuLevel="3" id="wirtschaft" class="list">
+                    <li>Arbeit</li>
+                    <li>Landwirtschaft</li>
+                    <li>Industrie</li>
+                    <li>Dienstleistungen</li>
+                    <li>Tourismus</li>
+                    <li>Bauen und Wohnen</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Staat und Politik -->
+                <ul menuLevel="3" id="staat_und_politik" class="list">
+                    <li>Raumgliederungen</li>
+                    <li>Abstimmungen</li>
+                    <li>Parlamentswahlen</li>
+                    <li>Öffentliche Finanzen</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Verkehr -->
+                <ul menuLevel="3" id="verkehr" class="list">
+                    <li>Flugverkehr</li>
+                    <li>Strassenverkehr</li>
+                    <li>Schienenverkehr</li>
+                    <li>Bergbahnen</li>
+                    <li>Schiffsverkehr</li>
+                    <li>Langsamverkehr</li>
+                    <li>Pendler</li>
+                </ul>
+
+                <!-- Menu -> Themen -> Energie und Kommunikation -->
+
+                <ul menuLevel="3" id="energie_und_kommunikation" class="list">
+                    <li>Primär-Energie</li>
+                    <li>Sekundär-Energie</li>
+                    <li>Energiewirtschaft</li>
+                    <li>Kommunikation</li>
+                </ul>
+            </div>
+            <div id="kartenvorschau">
+                    <img src="../img/kartenvorschau/stand_bevoelkerung_jaehrliche_angaben.PNG" alt="">
+                    <button id="button_karte_auswaehlen">auswählen</button>
+            </div>
+        </nav>
+
+        <div id="infocontainer" class="two-fifth">
+            <h2>Info</h2>
+
+            <h3>Klasse 3c Zürich Wiedikon</h3>
+            <ul>
+                <li>Gletscher in der Eiszeit</li>
+                <li>Die Bevölkerungsentwicklung von Zürich</li>
+                <li>Überalterung und Bevölkerungswachstum</li>
+                <li>Tourismusland Schweiz</li>
+                <li>Wasser und Strom - unsere Ressourcen</li>
+                <li>Die Schweiz als Industrieland</li>
+            </ul>
+
+            <h3>Atlas der Schweiz: Themen</h3>
+            <ul>
+                <li>Gefahren des schmelzenden Permafrostes</li>
+                <li>Zersiedelung und Mobilität - eine Herausforderung?</li>
+                <li>Der Jahrhundertsommer 2003 uns seine Konsequenzen</li>
+                <li>Die Globalisierung bringt neue Vögel und lässt alte aussterben</li>
+            </ul>
+
+            <div id="ueberalterung">
+                <h3>Überalterung und Bevölkerungswachstum</h3>
+                <p>Seit 2007 wächst die Wohnbevölkerung der Schweiz jedes Jahr um 88‘000 Personen (dies entspricht der Stadt Luzern). Jede Sekunde wird hierzulande ein Quadratmeter Naturfläche zubetoniert. - Die Weltbevölkerung nimmt jeden Tag um 220‘000 Menschen zu.<br><br>
+                Mit diesem starken Bevölkerungswachstum, hier wie weltweit, verbauen wir unseren Kindern im wahrsten Sinne des Wortes die Zukunft!
+                <img src="../img/infomaterial/uebervoelkerung_1.jpg" alt="">
+                Im Laufe des 20. Jahrhunderts ist die Zahl der älteren Menschen gestiegen, während die Anteile der Jugendlichen und der Personen im erwerbsfähigen Alter (20 bis 64 Jahre) gesunken sind. Die Form der Alterspyramide hat sich dabei von einer «Pyramide» (1900) über eine «Glocke» (1950) zu einer «Tanne» (2010) gewandelt. Für die Schweiz ist heute ein Altersaufbau typisch, bei dem die «Baby-Boom»-Generation dominiert. Ihr steht eine schwächer besetzte Jugendgeneration und eine wachsende Zahl älterer Menschen gegenüber.
+                <img src="../img/infomaterial/altersaufbau.gif" alt="">
+                Eine Studie des Bundesamtes für Statistik zeigt, dass bis 2024 Jahren die Bevölkerung in der Schweiz um 12,5 Prozent zunehmen wird. Der Hauptgrund dafür ist die internationale Zuwanderung.
+                <iframe src='http://www.srf.ch/player/tv/tagesschau--vom-29-03-2011/videoembed/schweiz-bevoelkerung-waechst-weiter?id=aee2791d-d6be-4fd9-bb51-24280d085886&mode=embed' width='400' height='225' frameborder='0' name='Tagesschau  vom 29.03.2011'></iframe>
+
+                </p>
+            </div>
+
+        </div>
+
+        <!-- LAYERMANAGER -->
+        <script type="text/html" id="layerTemplate">
+            <div class="grid_3 prefix_7">
+                <div class="layer <%= layerClass %>" data-layer="<%= layerClass %>">
+                    <header>
+                        <p class="icon <%= layerIcon %>"><%= layerTitle %></p>
+                    </header>
+                    <div class="controls">
+                        <div class="grid_7">
+                            Deckkraft
+                            <div data-slider="<%= layerClass %>" class="opacityslider"></div>
+                        </div>
+                        <div class="grid_3">
+                            Sichtbar
+                            <div class="onoffswitch">
+                                <input type="checkbox" data-layer="<%= layerClass %>" name="onoffswitch" class="onoffswitch-checkbox" id="onoff-<%= layerClass %>" checked>
+                                <label class="onoffswitch-label" for="onoff-<%= layerClass %>">
+                                    <div class="onoffswitch-inner"></div>
+                                    <div class="onoffswitch-switch"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </script>
+        <div class="layercontainer">    
+        </div>
+        <!-- LAYERS -->
+        <script type="text/html" id="bgLayerTemplate">
+            <div class="bglayer" id="<%= layerClass %>" style="background-image: <%= imageBackground %>;"></div>
+        </script>
+        <div class="bglayercontainer">
+            
+        </div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <script src="js/vendor/jquery.ui.touch-punch.min.js"></script>
+        <script src="js/vendor/underscore.js"></script>
+        <script src="js/joachim.js"></script>
+        <script src="js/matthias.js"></script>
+        <script src="js/ramun.js"></script>
+    </body>
+</html>
