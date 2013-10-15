@@ -1,8 +1,23 @@
 $( document ).ready(function() {
 	// TIMELINE
 	$('#timelineButton').click(function () {
-		$( this ).parent().toggleClass("is-expanded");
+		$( '.timelinecontainer' ).toggleClass("is-expanded");
 	});
+	function timelineinit () {
+		$('#timelineslider').slider({
+			range: true,
+	        min: 1900, 
+	        max: 2010, 
+	        step: 5,
+	        values: [ 1950, 1980 ],
+	    	orientation: "horizontal",
+		    slide: function( event, ui ) {
+        		$( "#years" ).text(ui.values[ 0 ] +" – "+ ui.values[ 1 ] );
+      		}
+    	});
+    	$( "#years" ).text($( "#timelineslider" ).slider( "values", 0 ) +" – "+ $( "#timelineslider" ).slider( "values", 1 ) );      
+	};
+	timelineinit();
 	// INFO
 	$('#infoButton').click(function () {
 		$('.infocontainer').css('left','0');
