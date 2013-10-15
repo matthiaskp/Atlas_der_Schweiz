@@ -77,6 +77,34 @@ $( document ).ready(function() {
 	    var bgLayerString = $("#bgLayerTemplate").html();
 	    var bgLayerAppend = _.template(bgLayerString, layerControlObject);
 	    $(".bglayercontainer").append(bgLayerAppend);
+
+	    //PORTLETS
+		$( ".layer header" ).click(function() {
+			console.log('clicked: ' + $(this));
+			$(".is-expanded").not($(this).parent()).each(function(){									//reset
+				$(this).children( ".controls" ).slideToggle(500, function(){
+					$(this).parent().animate({"margin-left":'317px','margin-right':'-317px'}, 500 , function(){
+						$(this).removeClass( "is-expanded");
+						//console.log("reset");
+					});	
+				});
+			});
+			if ($(this).parent().hasClass("is-expanded")){												//hide
+				$(this).next( ".controls" ).slideToggle(500, function(){
+					$(this).parent().animate({"margin-left":'317px','margin-right':'-317px'}, 500 , function(){
+						$(this).removeClass( "is-expanded");
+						//console.log("hidden");
+					});	
+				});
+			}
+			else {
+				$(this).parent().animate({"margin-left":'0','margin-right':'0'}, 500 , function(){					//expand
+					$(this).addClass( "is-expanded");
+					$(this).children( ".controls" ).slideToggle();
+					//console.log("is-expanded");
+				});
+			}
+		});
 	}
 
 	$( "#button_karte_auswaehlen" ).click(function(){

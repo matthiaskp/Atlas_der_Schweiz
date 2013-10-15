@@ -319,7 +319,7 @@ body.helper {
   z-index: 5;
   overflow-x: hidden;
   position: absolute;
-  left: 0;
+  left: -20%;
   top: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.95);
@@ -416,7 +416,9 @@ body.helper {
 
 /**********************************Kartenvorschau */
 #kartenvorschau {
-  background-color: #d7dadb;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #d7dadb;
   display: none;
   position: absolute;
   bottom: 0;
@@ -446,12 +448,15 @@ body.helper {
   background-color: white;
   margin-top: 20px;
   padding: 0 10px;
-  z-index: 20; }
+  z-index: 20;
+  margin-right: -317px;
+  margin-left: 317px; }
   .layer header p {
     margin: 10px 0; }
   .layer .controls {
+    display: none;
     height: 60px;
-    padding-top: 10px; }
+    overflow: hidden; }
   .layer .ui-slider-range {
     background: #6dbcdb; }
 
@@ -479,7 +484,6 @@ body.helper {
     cursor: pointer; }
 
 .bglayercontainer {
-  background-color: black;
   position: absolute;
   top: 0;
   left: 0;
@@ -494,3 +498,6 @@ body.helper {
     width: 100%;
     height: 100%;
     background-color: red; }
+
+.interfacebuttons button {
+  z-index: 4; }

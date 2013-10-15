@@ -4,6 +4,7 @@ $( document ).ready(function() {
 		$(this).parent().css('width','100%');
 		$('.menu').hide();
 		$('.livesearch').show();
+		$('.menuContainer').css('width','100%');
 	})
 	// INSTALL TO HOME SCREEN INFO
 	if (window.navigator.standalone === false) {
