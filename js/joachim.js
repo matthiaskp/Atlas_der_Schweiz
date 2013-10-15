@@ -1,5 +1,13 @@
 $( document ).ready(function() {
+	// INFO
+	$('#infoButton').click(function () {
+		$('.infocontainer').css('left','0');
+	});
+	$('#infoCloseButton').click(function () {
+		$('.infocontainer').css('left','-40%');
+	});
 
+	// SUCHE
 	$('#suchFeld').focus(function () {
 		$(this).parent().css('width','100%');
 		$('.menu').hide();
