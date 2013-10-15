@@ -21,21 +21,26 @@ $("#width").addClass("menuIsVisible").removeClass("menuIsHidden");
 $(".menu > ul > li > a").click(function(e){
 	console.log("------- click ------")
 	e.preventDefault();
-	if(menuLevelActive!=1){
-		$(".menu > ul > li > a").removeClass("menuLinkActive");
-		$(this).addClass("menuLinkActive");
-	};
-	
+	// if(menuLevelActive!=1){
+	// 	$(".menu > ul > li > a").removeClass("menuLinkActive");
+	// 	$(this).addClass("menuLinkActive");
+	// };
 
 	var linkTo = $(this).attr("linkTo");
-	menuLevelClicked = parseInt($(this).parent().parent().attr("menuLevel"));
-	
-	console.log("menuLevelClicked: "  + menuLevelClicked)
 
-	for (var i = (menuLevelClicked+1) ; i <= 5; i++) {
-		//console.log("levels removed");
-		$("[menuLevel='"+i+"']").addClass("menuIsHidden").removeClass("menuIsVisible");
-	};
+	if(linkTo == "einstellungen" || linkTo == "about" || linkTo == "hilfe"){
+		menuSchliessen();
+		
+	}
+	else{
+		menuLevelClicked = parseInt($(this).parent().parent().attr("menuLevel"));
+		//console.log("menuLevelClicked: "  + menuLevelClicked)
+
+		for (var i = (menuLevelClicked+1) ; i <= 5; i++) {
+			//console.log("levels removed");
+			$("[menuLevel='"+i+"']").addClass("menuIsHidden").removeClass("menuIsVisible");
+		};
+	}
 
 
 /////////////Abschliessen der Click-Funktion
@@ -66,14 +71,17 @@ $("#zurueckButton").click(function(e){
 //////////////////////////// Schliessen Button
 
 $("#menu_schliessen").click(function(e){
-	
+	menuSchliessen();
+});
+
+function menuSchliessen () {
 	$("#menuButton").show().delay(500).fadeIn(500);
 	$(".menu > ul").addClass("menuIsHidden");
 	menuLevelActive = 1;
 	checkMenuLevel(menuLevelActive,null);
 	$(".menuContainer").removeClass("menuContainerVisible two-fifth").addClass("menuContainerHidden one-fifth");
 	$(".menu").css("width", "500%");
-});
+}
 
 //////////////////////////// Kartenvorschau 
 $("ul[menulevel=5] > li > a").click(function(e){
@@ -102,6 +110,14 @@ $("#kartenvorschau > img").click(function(e){
 	$("#kartenFarben").show();
 });
 
+//////////////////////////// Check Menu Level Function
+
+$(".menu-to-overlay").click(function(e){
+	e.preventDefault();
+	var linkTo = $(this).attr("linkTo");
+	console.log(linkTo);
+
+});
 
 //////////////////////////// Check Menu Level Function
 

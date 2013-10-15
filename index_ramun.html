@@ -70,13 +70,13 @@
                         <a linkTo="legende" href="#">Legende</a>
                     </li>
                     <li class="icon einstellungen">
-                        <a linkTo="einstellungen" href="#">Einstellungen</a>
+                        <a class="menu-to-overlay" linkTo="einstellungen" href="#">Einstellungen</a>
                     </li>
-                    <li class="icon startseite">
-                        <a linkTo="startseite" href="#">About</a>
+                    <li class="icon about">
+                        <a class="menu-to-overlay" linkTo="about" href="#">About</a>
                     </li>
                     <li class="icon hilfe">
-                        <a linkTo="hilfe" href="#">Hilfe</a>
+                        <a class="menu-to-overlay" linkTo="hilfe" href="#">Hilfe</a>
                     </li>
                 </ul>
                 <!-- Menu -> Basiskarte -->
@@ -278,11 +278,46 @@
                 </ul>
 
                 <ul menuLevel="2" id="beschriftung" class="list">
-                    <li>Städte/Ortschaften</li>
-                    <li>Gewässer</li>
-                    <li>Berge</li>
-                    <li>Gletscher</li>
-                    <li>Regionen</li>
+                    <li> <div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="beschriftung-ortschaften">
+                            <label class="onoffswitch-label" for="beschriftung-ortschaften">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                        Ortschaften</li>
+                    <li><div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="beschriftung-gewaesser">
+                            <label class="onoffswitch-label" for="beschriftung-gewaesser">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                        Gewässer</li>
+                    <li><div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="beschriftung-berge">
+                            <label class="onoffswitch-label" for="beschriftung-berge">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                        Berge</li>
+                    <li><div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="beschriftung-gletscher">
+                            <label class="onoffswitch-label" for="beschriftung-gletscher">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                        Gletscher</li>
+                    <li><div class="onoffswitch">
+                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="beschriftung-regionen">
+                            <label class="onoffswitch-label" for="beschriftung-regionen">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
+                        </div>
+                        Regionen</li>
                 </ul>
 
                 <ul menuLevel="2" id="einstellungen" class="list">
@@ -428,6 +463,29 @@
                     <button id="button_karte_auswaehlen">auswählen</button>
             </div>
         </nav>
+
+        <div class="menu-overlay" id="hilfe">
+            <div class="menu-overlay-inner">
+                <button class="icon themen" id="menu-overlay-schliessen">menu</button>
+                <h2>Hilfe</h2>
+                <p>bla</p>
+            </div>
+        </div>
+        <div class="menu-overlay" id="einstellungen">
+            <div class="menu-overlay-inner">
+                <button class="icon themen" id="menu-overlay-schliessen">menu</button>
+                <h2>Einstellungen</h2>
+                <p>bla</p>
+            </div>
+        </div>
+        <div class="menu-overlay" id="about">
+            <div class="menu-overlay-inner">
+                <button class="icon themen" id="menu-overlay-schliessen">menu</button>
+                <h2>About</h2>
+                <p>bla</p>
+            </div>
+        </div>
+
         <div class="interfacebuttons">
             <button class="icon themen" id="menuButton">menu</button>
             <div id="bottomLeftMenu">
@@ -436,6 +494,7 @@
                 <button class="icon" id="ausrichten">ausrichten</button>
             </div>
         </div>
+        
         <div id="kartenFarben"></div>
         <!-- LAYERMANAGER -->
         <script type="text/html" id="layerTemplate">
