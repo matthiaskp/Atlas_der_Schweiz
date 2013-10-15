@@ -6,10 +6,10 @@ $( document ).ready(function() {
 	function timelineinit () {
 		$('#timelineslider').slider({
 			range: true,
-	        min: 1900, 
-	        max: 2010, 
-	        step: 5,
-	        values: [ 1950, 1980 ],
+	        min: 1, 
+	        max: 12, 
+	        step: 1,
+	        values: [ 4, 8 ],
 	    	orientation: "horizontal",
 		    slide: function( event, ui ) {
         		$( "#years" ).text(ui.values[ 0 ] +" – "+ ui.values[ 1 ] );
