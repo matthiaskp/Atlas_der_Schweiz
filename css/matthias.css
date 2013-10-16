@@ -42,40 +42,60 @@
   float: left; }
 
 /**********************************Info */
+.infocontainer{
+    overflow-y: hidden !important;
+}
 
 .infocontainer>ul>li{
   margin-bottom: 12px;
+
 }
 
 .infocontainer img{
   width: 100%;
   margin: 10px auto;
+
+}
+
+.infoheader{
+  height: 15%;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 80;
+  overflow: hidden !important;
+  overflow-y: hidden !important;
+}
+
+.infoContentContainer{
+  overflow-y: scroll !important;
+  height: 85%;
 }
 
 .infoContent{
-  width: 94%;
+  display: none;
   margin-top: 10%;
-  position:absolute;
-  display: block;
+  position:relative;
   opacity: 1;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s; 
+/*  transition: margin-left 0.5s, opacity 0.5s;
+  -webkit-transition: margin-left 0.5s, opacity 0.5s; 
   transition-delay: 0.2s;
-  -webkit-transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;*/
 }
 
 .infomenu{
-  position:absolute;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s; 
+  display: block;
+  position:relative;
+/*  transition:  opacity 0.5s;
+  -webkit-transition:  opacity 0.5s; */
 
 }
 
 .info-is-active{
   opacity: 1;
   pointer-events: auto;
-  transition-delay: 0.2s;
-  -webkit-transition-delay: 0.2s;
+/*  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;*/
 }
 
 .info-is-hidden{
