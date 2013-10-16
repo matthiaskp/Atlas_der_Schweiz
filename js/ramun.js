@@ -32,6 +32,7 @@ $( document ).ready(function() {
 	};
 
 	$( ".layercontainer" ).sortable({
+		axis: 'y',
 		scroll: false,
 		tolerance: 'pointer',
 		cursor: 'pointer',

@@ -46,8 +46,8 @@
         <nav class="one-fifth menuContainer">
             <header>
                 <div class="menucontrols clearfix">
-                    <button class="menubutton icon" id="zurueckButton"></button>
-                    <button class="menubutton icon" id="menu_schliessen"></button>
+                    <button class="menubutton icon zurueck" id="zurueckButton"></button>
+                    <button class="menubutton icon schliessen" id="menu_schliessen"></button>
                 </div>
                 <input id="suchFeld" type="text" value="" placeholder="Suchen..."></input>
                 <div id="menuTitel">
@@ -263,12 +263,12 @@
                 </ul>
 
                 <ul menuLevel="2"  id="themen" class="list">
-                    <li><a linkTo="natur_und_umwelt" href="#">Natur & Umwelt</a></li>
-                    <li><a linkTo="gesellschaft" href="#">Gesellschaft</a></li>
-                    <li><a linkTo="wirtschaft" href="#">Wirtschaft</a></li>
-                    <li><a linkTo="staat_und_politik" href="#">Staat & Politik</a></li>
-                    <li><a linkTo="verkehr" href="#">Verkehr</a></li>
-                    <li><a linkTo="energie_und_kommunikation" href="#">Energie & Kommunikation</a></li>
+                    <li class="icon natur_und_umwelt"><a linkTo="natur_und_umwelt" href="#">Natur & Umwelt</a></li>
+                    <li class="icon gesellschaft"><a linkTo="gesellschaft" href="#">Gesellschaft</a></li>
+                    <li class="icon wirtschaft"><a linkTo="wirtschaft" href="#">Wirtschaft</a></li>
+                    <li class="icon staat_und_politik"><a linkTo="staat_und_politik" href="#">Staat & Politik</a></li>
+                    <li class="icon verkehr"><a linkTo="verkehr" href="#">Verkehr</a></li>
+                    <li class="icon energie"><a linkTo="energie_und_kommunikation" href="#">Energie & Kommunikation</a></li>
                 </ul>
 
                 <ul menuLevel="2" id="legende" class="list">
@@ -581,7 +581,7 @@
 
                 </p>
             </div>
-            <button class="icon info" id="infoCloseButton">close</button>
+            <button class="icon info schliessen" id="infoCloseButton">close</button>
         </div>
         </div>
         <div class="interfacebuttons">

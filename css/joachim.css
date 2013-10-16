@@ -88,6 +88,125 @@ div.icon {
       .icon.hilfe:before {
         background-image: url("../img/icons/icon_hilfe@2x.png");
         background-size: 100% 100%; } }
+  .icon.energie:before {
+    background-image: url("../img/icons/icon_energie_und_kommunikation.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.energie:before {
+        background-image: url("../img/icons/icon_energie_und_kommunikation@2x.png");
+        background-size: 100% 100%; } }
+  .icon.export:before {
+    background-image: url("../img/icons/icon_export.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.export:before {
+        background-image: url("../img/icons/icon_export@2x.png");
+        background-size: 100% 100%; } }
+  .icon.gesellschaft:before {
+    background-image: url("../img/icons/icon_gesellschaft.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.gesellschaft:before {
+        background-image: url("../img/icons/icon_gesellschaft@2x.png");
+        background-size: 100% 100%; } }
+  .icon.gletscher:before {
+    background-image: url("../img/icons/icon_gletscher.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.gletscher:before {
+        background-image: url("../img/icons/icon_gletscher@2x.png");
+        background-size: 100% 100%; } }
+  .icon.natur_und_umwelt:before {
+    background-image: url("../img/icons/icon_natur_und_umwelt.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.natur_und_umwelt:before {
+        background-image: url("../img/icons/icon_natur_und_umwelt@2x.png");
+        background-size: 100% 100%; } }
+  .icon.staat_und_politik:before {
+    background-image: url("../img/icons/icon_staat_und_politik.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.staat_und_politik:before {
+        background-image: url("../img/icons/icon_staat_und_politik@2x.png");
+        background-size: 100% 100%; } }
+  .icon.wirtschaft:before {
+    background-image: url("../img/icons/icon_wirtschaft.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.wirtschaft:before {
+        background-image: url("../img/icons/icon_wirtschaft@2x.png");
+        background-size: 100% 100%; } }
+  .icon.verkehr:before {
+    background-image: url("../img/icons/icon_verkehr.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.verkehr:before {
+        background-image: url("../img/icons/icon_verkehr@2x.png");
+        background-size: 100% 100%; } }
+  .icon.bahnhof:before {
+    background-image: url("../img/icons/icon_bahnhof.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.bahnhof:before {
+        background-image: url("../img/icons/icon_bahnhof@2x.png");
+        background-size: 100% 100%; } }
+  .icon.bahnlinien:before {
+    background-image: url("../img/icons/icon_bahnlinien.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.bahnlinien:before {
+        background-image: url("../img/icons/icon_bahnlinien@2x.png");
+        background-size: 100% 100%; } }
+  .icon.berge:before {
+    background-image: url("../img/icons/icon_berge.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.berge:before {
+        background-image: url("../img/icons/icon_berge@2x.png");
+        background-size: 100% 100%; } }
+  .icon.ortschaft:before {
+    background-image: url("../img/icons/icon_ortschaft.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.ortschaft:before {
+        background-image: url("../img/icons/icon_ortschaft@2x.png");
+        background-size: 100% 100%; } }
+  .icon.pass:before {
+    background-image: url("../img/icons/icon_pass.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.pass:before {
+        background-image: url("../img/icons/icon_pass@2x.png");
+        background-size: 100% 100%; } }
+  .icon.schliessen:before {
+    background-image: url("../img/icons/icon_schliessen.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.schliessen:before {
+        background-image: url("../img/icons/icon_schliessen@2x.png");
+        background-size: 100% 100%; } }
+  .icon.seilbahn:before {
+    background-image: url("../img/icons/icon_seilbahn.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.seilbahn:before {
+        background-image: url("../img/icons/icon_seilbahn@2x.png");
+        background-size: 100% 100%; } }
+  .icon.strasse:before {
+    background-image: url("../img/icons/icon_strasse.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.strasse:before {
+        background-image: url("../img/icons/icon_strasse@2x.png");
+        background-size: 100% 100%; } }
+  .icon.zurueck:before {
+    background-image: url("../img/icons/icon_zurueck.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.zurueck:before {
+        background-image: url("../img/icons/icon_zurueck@2x.png");
+        background-size: 100% 100%; } }
   .icon.big {
     padding-left: 30px; }
     .icon.big.themen:before {
@@ -154,15 +273,17 @@ button {
   -webkit-border-radius: 2px;
   color: white;
   outline: none; }
+  button.icon {
+    font-size: 0; }
   button:hover {
     background-color: #f7f8f8; }
   button:active {
     background-color: #eceeee; }
   button.icon:before {
-    width: 34px;
-    height: 34px;
-    top: 8px;
-    left: 8px; }
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 0px; }
   button.menubutton {
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -388,7 +509,7 @@ body.helper {
 
 #suchFeld {
   box-sizing: border-box;
-  height: 35px;
+  height: 65px;
   background: #d7dadb;
   color: #2c3e50;
   font-family: "robotolight";
