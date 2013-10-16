@@ -3,10 +3,10 @@ $( document ).ready(function() {
 		$(".onoffswitch-label").click(function(){
 			var ebene = $(this).siblings('.onoffswitch-checkbox').attr('data-layer');
 			if ($(this).siblings('.onoffswitch-checkbox').is(":checked")){
-	  			$('#'+ ebene).css('visibility', 'hidden');
+	  			$('#'+ ebene).animate({opacity: 0},300);
 			}
 			else{
-				$('#'+ ebene).css('visibility', 'visible');
+				$('#'+ ebene).animate({opacity: 1},300);
 			}
 		});
 	};
