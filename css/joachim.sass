@@ -338,15 +338,15 @@ body.helper
 	left: 0%
 	/*height: 100%*/
 	width: 20%
-	transition: all 0.5s
-	-webkit-transition: all 0.5s
+	transition: left 0.5s
+	-webkit-transition: left 0.5s
 
 .menuContainerHidden
 	/*height: 0px*/
 	width: 0px
 	left: -20%
-	transition: all 0.5s
-	-webkit-transition: all 0.5s
+	transition: left 0.5s
+	-webkit-transition: left 0.5s
 
 .menu
 	position: absolute
@@ -371,6 +371,7 @@ body.helper
 				text-decoration: none
 				color: $textcolor
 				display: inline-block
+				// cursor: pointer
 				span
 					padding-right: 10px
 					img
@@ -453,6 +454,7 @@ body.helper
 	box-sizing: border-box
 	img
 		width: 100%
+		background-color: $lightgray
 	button
 		font-family: 'robotolight'
 		width: auto
@@ -579,10 +581,24 @@ body.helper
 	z-index: 5
 	overflow-y: scroll
 	overflow-x: hidden
+	-webkit-transition: left 0.3s ease         
+	-moz-transition: left 0.3s ease
+	-o-transition: left 0.3s ease
+	-ms-transition: left 0.3s ease
+	transition: left 0.3s ease
+	.infoContent
+		width: 90%
+	.infomenu
+		width: 90%
 	#infoCloseButton
 		position: absolute
 		top: 10px
 		right: 10px
+	.infolist
+		list-style-type: none
+		li
+			padding-bottom: 7px
+			padding-top: 7px
 #infoButton
 	position: absolute
 	bottom: 0

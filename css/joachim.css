@@ -489,15 +489,15 @@ body.helper {
   left: 0%;
   /*height: 100% */
   width: 20%;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s; }
+  transition: left 0.5s;
+  -webkit-transition: left 0.5s; }
 
 .menuContainerHidden {
   /*height: 0px */
   width: 0px;
   left: -20%;
-  transition: all 0.5s;
-  -webkit-transition: all 0.5s; }
+  transition: left 0.5s;
+  -webkit-transition: left 0.5s; }
 
 .menu {
   position: absolute;
@@ -602,7 +602,8 @@ body.helper {
   padding: 20px;
   box-sizing: border-box; }
   #kartenvorschau img {
-    width: 100%; }
+    width: 100%;
+    background-color: #d7dadb; }
   #kartenvorschau button {
     font-family: "robotolight";
     width: auto;
@@ -730,11 +731,25 @@ body.helper {
   background-color: white;
   z-index: 5;
   overflow-y: scroll;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  -webkit-transition: left 0.3s ease;
+  -moz-transition: left 0.3s ease;
+  -o-transition: left 0.3s ease;
+  -ms-transition: left 0.3s ease;
+  transition: left 0.3s ease; }
+  .infocontainer .infoContent {
+    width: 90%; }
+  .infocontainer .infomenu {
+    width: 90%; }
   .infocontainer #infoCloseButton {
     position: absolute;
     top: 10px;
     right: 10px; }
+  .infocontainer .infolist {
+    list-style-type: none; }
+    .infocontainer .infolist li {
+      padding-bottom: 7px;
+      padding-top: 7px; }
 
 #infoButton {
   position: absolute;
