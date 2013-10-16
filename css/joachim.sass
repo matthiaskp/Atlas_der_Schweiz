@@ -380,16 +380,15 @@ body.helper
 /***********************************Kartenvorschau*/
 
 #kartenvorschau
-	// background-color: $lightgray
+	background-color: white
 	border-width: 1px 0 0 0
 	border-style: solid
 	border-color: $lightgray
 	display: none
-	position: absolute
+	position: fixed
+	width: 40%
 	bottom: 0
 	left: 0
-	right: 0
-	float: right
 	padding: 20px
 	box-sizing: border-box
 	img
@@ -415,24 +414,36 @@ body.helper
 	margin-top: 20px
 	padding: 0 10px
 	z-index: 20
-	margin-left: 265px
-	margin-right: -265px
+	margin-left: 260px
+	margin-right: -260px
 	-webkit-transition: margin 0.3s ease         
 	-moz-transition: margin 0.3s ease
 	-o-transition: margin 0.3s ease
 	-ms-transition: margin 0.3s ease
 	transition: margin 0.3s ease
+	position: relative
+	-moz-box-shadow: 0 0 2px 1px rgba(0,0,0,0.2)
+	-webkit-box-shadow: 0 0 2px 1px rgba(0,0,0,0.2)
+	box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.2)
 	&.is-expanded
 		margin-left: 0
 		margin-right: 0
-	header
-		position: relative
 		.kartenfarben
+			right: 0
+			top: 0
+	header
+		.kartenfarben
+			z-index: 5
 			position: absolute
+			right: 260px
+			top: 0
 			height: 100%
 			width: 5px
-			margin-left: -10px
-			background-color: blue
+			-webkit-transition: right 0.3s ease         
+			-moz-transition: right 0.3s ease
+			-o-transition: right 0.3s ease
+			-ms-transition: right 0.3s ease
+			transition: right 0.3s ease
 		p
 			margin: 10px 0
 	.controls
@@ -481,7 +492,6 @@ body.helper
 	right: 0
 	bottom: 0
 	z-index: -10
-
 	.bglayer
 		top: 0
 		left: 0
