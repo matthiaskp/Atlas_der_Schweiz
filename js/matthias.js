@@ -149,7 +149,25 @@ $(".menu-overlay-schliessen").click(function(e){
 // 	$(this).find(".menu-overlay-inner").delay(500).fadeOut();
 // });
 
+
+
+//////////////////////////// Infocontainer Funktionalität
+
+$("#Infocontainer>ul>li>a").click(function(e){
+	e.preventDefault();
+	var infoPointClicked = $(this).attr("linkTo");
+	$(".infoContent").hide();
+	$("#" + linkTo).show();
+}); 
+
+
+
+
+
 //////////////////////////// Check Menu Level Function
+
+
+
 
 function checkMenuLevel (menuLevelActive, menuTitel){
 	switch (menuLevelActive) {
@@ -201,7 +219,7 @@ function manageTitleAndBc (clickedLink, menuLevelActive, menuLevelClicked) {
 	};
 
 	if(clickedLink != null){	
-		var linkTo = clickedLink.attr("linkTo")
+		var linkTo = clickedLink.attr("linkTo");
 		// menuTitel = linkTo.toLowerCase().replace(/\b[a-z]/g, function(letter) {
   //   			return letter.toUpperCase(); 
   //   		});
