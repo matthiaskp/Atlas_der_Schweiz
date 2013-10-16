@@ -200,12 +200,47 @@ div.icon {
       .icon.strasse:before {
         background-image: url("../img/icons/icon_strasse@2x.png");
         background-size: 100% 100%; } }
-  .icon.zurueck:before {
+  .icon.zurueckbutton:before {
     background-image: url("../img/icons/icon_zurueck.png");
     background-size: 100% 100%; }
     @media all and (-webkit-min-device-pixel-ratio : 1.5) {
-      .icon.zurueck:before {
+      .icon.zurueckbutton:before {
         background-image: url("../img/icons/icon_zurueck@2x.png");
+        background-size: 100% 100%; } }
+  .icon.threedbutton:before {
+    background-image: url("../img/icons/icon_3d.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.threedbutton:before {
+        background-image: url("../img/icons/icon_3d@2x.png");
+        background-size: 100% 100%; } }
+  .icon.ausrichtenbutton:before {
+    background-image: url("../img/icons/icon_ausrichten.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.ausrichtenbutton:before {
+        background-image: url("../img/icons/icon_ausrichten@2x.png");
+        background-size: 100% 100%; } }
+  .icon.infobutton:before {
+    background-image: url("../img/icons/icon_info.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.infobutton:before {
+        background-image: url("../img/icons/icon_info@2x.png");
+        background-size: 100% 100%; } }
+  .icon.timelinebutton:before {
+    background-image: url("../img/icons/icon_timeline.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.timelinebutton:before {
+        background-image: url("../img/icons/icon_timeline@2x.png");
+        background-size: 100% 100%; } }
+  .icon.openmenubutton:before {
+    background-image: url("../img/icons/icon_menu.png");
+    background-size: 100% 100%; }
+    @media all and (-webkit-min-device-pixel-ratio : 1.5) {
+      .icon.openmenubutton:before {
+        background-image: url("../img/icons/icon_menu@2x.png");
         background-size: 100% 100%; } }
   .icon.big {
     padding-left: 30px; }
