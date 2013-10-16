@@ -1,6 +1,6 @@
 //MEASURES
 $buttonsize: 50px
-$buttonicon: 34px
+$buttonicon: 50px
 
 //COLORS
 $textcolor: #2c3e50
@@ -84,6 +84,50 @@ div.icon
 		@include at2x('icons/icon_about', 100%, 100%, '.png')
 	&.hilfe:before	
 		@include at2x('icons/icon_hilfe', 100%, 100%, '.png')
+	&.energie:before
+		@include at2x('icons/icon_energie_und_kommunikation', 100%, 100%, '.png')
+	&.export:before
+		@include at2x('icons/icon_export', 100%, 100%, '.png')
+	&.gesellschaft:before
+		@include at2x('icons/icon_gesellschaft', 100%, 100%, '.png')
+	&.gletscher:before
+		@include at2x('icons/icon_gletscher', 100%, 100%, '.png')
+	&.natur_und_umwelt:before
+		@include at2x('icons/icon_natur_und_umwelt', 100%, 100%, '.png')
+	&.staat_und_politik:before
+		@include at2x('icons/icon_staat_und_politik', 100%, 100%, '.png')
+	&.wirtschaft:before
+		@include at2x('icons/icon_wirtschaft', 100%, 100%, '.png')
+	&.verkehr:before
+		@include at2x('icons/icon_verkehr', 100%, 100%, '.png')
+	&.bahnhof:before
+		@include at2x('icons/icon_bahnhof', 100%, 100%, '.png')
+	&.bahnlinien:before
+		@include at2x('icons/icon_bahnlinien', 100%, 100%, '.png')
+	&.berge:before
+		@include at2x('icons/icon_berge', 100%, 100%, '.png')
+	&.ortschaft:before
+		@include at2x('icons/icon_ortschaft', 100%, 100%, '.png')
+	&.pass:before
+		@include at2x('icons/icon_pass', 100%, 100%, '.png')
+	&.schliessen:before
+		@include at2x('icons/icon_schliessen', 100%, 100%, '.png')
+	&.seilbahn:before
+		@include at2x('icons/icon_seilbahn', 100%, 100%, '.png')
+	&.strasse:before
+		@include at2x('icons/icon_strasse', 100%, 100%, '.png')
+	&.zurueckbutton:before
+		@include at2x('icons/icon_zurueck', 100%, 100%, '.png')
+	&.threedbutton:before
+		@include at2x('icons/icon_3d', 100%, 100%, '.png')
+	&.ausrichtenbutton:before
+		@include at2x('icons/icon_ausrichten', 100%, 100%, '.png')
+	&.infobutton:before
+		@include at2x('icons/icon_info', 100%, 100%, '.png')
+	&.timelinebutton:before
+		@include at2x('icons/icon_timeline', 100%, 100%, '.png')
+	&.openmenubutton:before
+		@include at2x('icons/icon_menu', 100%, 100%, '.png')
 
 	&.big
 		// BIG ICON INDEX
@@ -117,6 +161,8 @@ button
 	-webkit-border-radius: 2px
 	color: white
 	outline: none
+	&.icon
+		font-size: 0
 	&:hover
 		background-color: lighten($lightgray,12%)
 	&:active
@@ -352,7 +398,7 @@ body.helper
 	
 #suchFeld
 	box-sizing: border-box
-	height: 35px
+	height: 65px
 	background: $lightgray
 	color: $textcolor
 	font-family: 'robotolight'
