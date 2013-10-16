@@ -46,13 +46,14 @@
         <nav class="one-fifth menuContainer">
             <header>
                 <div class="menucontrols clearfix">
-                    <button class="menubutton icon zurueck" id="zurueckButton"></button>
+                    <button class="menubutton icon zurueckbutton" id="zurueckButton"></button>
                     <button class="menubutton icon schliessen" id="menu_schliessen"></button>
                 </div>
-                <input id="suchFeld" type="text" value="" placeholder="Suchen..."></input>
-                <div id="menuTitel">
-                    <h2 class="icon big themen">Themen</h2>
-                    <span class="smalltext">Verkehr > Schienenverkehr</span>
+                <div class="suche_und_titel">
+                    <input id="suchFeld" type="text" value="" placeholder="Suchen..."></input>
+                    <div id="menuTitel">
+                        <h2 class="icon big themen">Themen</h2>
+                    </div>
                 </div>
             </header>
             <div class="menu">
@@ -69,6 +70,7 @@
                     <li class="icon legende">
                         <a linkTo="legende" href="#">Legende</a>
                     </li>
+                    <li class="placeholder"></li>
                     <li class="icon einstellungen">
                         <a class="menu-to-overlay" linkTo="einstellungen" href="#">Einstellungen</a>
                     </li>

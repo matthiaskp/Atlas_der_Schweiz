@@ -473,7 +473,7 @@ body.helper {
 
 /**********************************Menu */
 .menuContainer {
-  z-index: 5;
+  z-index: 50;
   overflow-x: hidden;
   position: absolute;
   left: -20%;
@@ -504,9 +504,12 @@ body.helper {
   width: 500%;
   transition: all 0.5s;
   -webkit-transition: all 0.5s; }
+  .menu .placeholder {
+    width: 100%;
+    height: 20px; }
   .menu ul {
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 15px;
     float: left;
     width: 20%;
     box-sizing: border-box; }
@@ -536,20 +539,34 @@ body.helper {
 
 #menuTitel {
   display: none;
-  background-color: #d7dadb;
-  box-sizing: border-box;
-  padding: 20px; }
+  position: absolute;
+  background: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
   #menuTitel h2 {
-    margin: 0; }
+    margin-left: 20px;
+    margin-top: 10px; }
+
+.suche_und_titel {
+  position: relative;
+  box-sizing: border-box;
+  height: 55px;
+  background: #d7dadb; }
 
 #suchFeld {
-  box-sizing: border-box;
-  height: 65px;
-  background: #d7dadb;
+  position: absolute;
+  background: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   color: #2c3e50;
   font-family: "robotolight";
   border: none;
-  padding: 0 20px; }
+  padding: 0 20px;
+  outline: none; }
   #suchFeld::-webkit-input-placeholder {
     color: #2c3e50;
     font-family: "robotolight"; }
@@ -628,7 +645,8 @@ body.helper {
     margin-right: 0; }
     .layer.is-expanded .kartenfarben {
       right: 0;
-      top: 0; }
+      top: 0;
+      width: 7px; }
   .layer header .kartenfarben {
     z-index: 5;
     position: absolute;
@@ -636,11 +654,11 @@ body.helper {
     top: 0;
     height: 100%;
     width: 5px;
-    -webkit-transition: right 0.3s ease;
-    -moz-transition: right 0.3s ease;
-    -o-transition: right 0.3s ease;
-    -ms-transition: right 0.3s ease;
-    transition: right 0.3s ease; }
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
   .layer header p {
     margin: 10px 0; }
   .layer .controls {
