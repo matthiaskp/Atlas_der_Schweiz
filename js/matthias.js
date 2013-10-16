@@ -153,15 +153,29 @@ $(".menu-overlay-schliessen").click(function(e){
 
 //////////////////////////// Infocontainer Funktionalität
 
-$("#Infocontainer>ul>li>a").click(function(e){
+$(".infomenu>ul>li>a").click(function(e){
+	console.log("info ausgewählt");
 	e.preventDefault();
 	var infoPointClicked = $(this).attr("linkTo");
-	$(".infoContent").hide();
-	$("#" + linkTo).show();
+	$(".infoContent").addClass("info-is-hidden").removeClass("info-is-active");
+	$(".infomenu").addClass("info-is-hidden").removeClass("info-is-active");
+	$("#" + infoPointClicked).removeClass("info-is-hidden").addClass("info-is-active");
+	$("#info_zurueck").fadeIn(300);
 }); 
 
+$("#infoCloseButton").click(function(e){
+	e.preventDefault();
+	$("#info_zurueck").delay(100).fadeOut(300);
+	$(".infoContent").addClass("info-is-hidden").removeClass("info-is-active");
+	$(".infomenu").addClass("info-is-active").removeClass("info-is-hidden");
+});
 
-
+$("#info_zurueck").click(function(e){
+	e.preventDefault();
+	$("#info_zurueck").delay(100).fadeOut(300);
+	$(".infoContent").addClass("info-is-hidden").removeClass("info-is-active");
+	$(".infomenu").addClass("info-is-active").removeClass("info-is-hidden");
+});
 
 
 //////////////////////////// Check Menu Level Function

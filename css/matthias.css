@@ -43,12 +43,6 @@
 
 /**********************************Info */
 
-/*.infocontainer {
-  background-color: rgba(255,255,255,0.9);  
-  padding: 10px;
-  height: 100%;
-}*/
-
 .infocontainer>ul>li{
   margin-bottom: 12px;
 }
@@ -58,6 +52,44 @@
   margin: 10px auto;
 }
 
+.infoContent{
+  width: 94%;
+  margin-top: 10%;
+  position:absolute;
+  display: block;
+  opacity: 1;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; 
+  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+}
+
+.infomenu{
+  position:absolute;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; 
+
+}
+
+.info-is-active{
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+}
+
+.info-is-hidden{
+  opacity: 0;
+  margin-left: 15%;
+  pointer-events: none;
+}
+
+#info_zurueck{
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 /*#infocontainer iframe{
   width: 70%;
 }*/
@@ -116,6 +148,7 @@
   pointer-events: auto;
 }
 
+
 .menu-overlay-inner-is-hidden{
   pointer-events: none;
   margin: 10% auto;
@@ -124,8 +157,6 @@
 /*  transition: all 0.5s, padding 0.8s;
   -webkit-transition: all 0.5s, padding 0.8s; */
  }
-
-
 
 .menu-overlay-inner>.menu-overlay-schliessen{
   position: absolute;
@@ -136,6 +167,8 @@
 .div-is-hidden{
   display: none;
 }
+
+
 
 /*#einstellungen-overlay{
   display: none;
