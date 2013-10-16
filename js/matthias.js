@@ -240,7 +240,16 @@ function getKartenFarben (kartenName, layerClass){
 		{name: 'stand_volkszaehlungen', farben: ['#f8f88d','#f56431','#94441e','#32230b']},
 		{name: 'bevoelkerungsdichte_aktuell', farben: ['#be3c14','#d6854c','#f9f2a1']},
 		{name: 'dichte_volkszaehlungen', farben: ['#be3c14','#d6854c','#f9f2a1']},
-		{name: 'bevoelkerungsverteilung', farben: ['#ffffdd','#f8e247','#ffaa13','#913806','#5b0000','#0b0b0b']}
+		{name: 'bevoelkerungsverteilung', farben: ['#ffffdd','#f8e247','#ffaa13','#913806','#5b0000','#0b0b0b']},
+		{name: 'sumpfrohrsaenger', farben: ['#3f007d','#7f5377','#af9272','#dfd06d','#fffa6a']},
+		{name: 'teichrohrsaenger', farben: ['#3f007d','#7f5377','#af9272','#dfd06d','#fffa6a']},
+		{name: 'eisvogel', farben: ['#3f007d','#eb6731']},
+		{name: 'stockente', farben: ['#3f007d','#7f5377','#af9272','#dfd06d','#fffa6a']},
+		{name: 'graureihner', farben: ['#3f007d','#ffee9f','#f8c17a','#f29456','#eb6731']},
+		{name: 'kuckuck', farben: ['#9f7d74','#cfbb6f','#fffa6a']},
+		{name: 'hoeckerschwan', farben: ['#9f7d74','#cfbb6f','#fffa6a']},
+		{name: 'wasserralle', farben: ['#9f7d74','#cfbb6f','#fffa6a']},
+		{name: 'anteil_privathaushalte_eine_person', farben: ['#145470','#447868','#749c60','#9cb870','#cad296', '#f8e9bc']}
 		];
 
 		// {name: 'entwicklung_bevoelkerung_jaehrliche_angaben', farben: [#be3c14,#d88d53,#f2de91,#a6aba3,#384da6]},
