@@ -600,74 +600,79 @@
 
         <!-- INFO -->
         <div class="infocontainer two-fifth">
-           <button class="menubutton icon" id="info_zurueck"></button>
-            <div class="infomenu info-is-active">
-                <h2>Info</h2>
-                <h3>Klasse 3c Zürich Wiedikon</h3>
-                <ul>
-                    <li>Gletscher in der Eiszeit</li>
-                    <li><a linkTo="uebervoelkerung" href="#">Die Bevölkerungsentwicklung von Zürich</a></li>
-                    <li>Überalterung und Bevölkerungswachstum</li>
-                    <li>Tourismusland Schweiz</li>
-                    <li>Wasser und Strom - unsere Ressourcen</li>
-                    <li>Die Schweiz als Industrieland</li>
-                </ul>
+            <div class="infoheader">
+               <button class="menubutton icon" id="info_zurueck"></button>
+               <button class="icon info" id="infoCloseButton">close</button>
+           </div>
+           <div class="infoContentContainer">
+                <div class="infomenu info-is-active">
+                    <h2>Info</h2>
+                    <h3>Klasse 3c Zürich Wiedikon</h3>
+                    <ul>
+                        <li>Gletscher in der Eiszeit</li>
+                        <li><a linkTo="uebervoelkerung" href="#">Die Bevölkerungsentwicklung von Zürich</a></li>
+                        <li>Überalterung und Bevölkerungswachstum</li>
+                        <li>Tourismusland Schweiz</li>
+                        <li>Wasser und Strom - unsere Ressourcen</li>
+                        <li>Die Schweiz als Industrieland</li>
+                    </ul>
 
-                <h3>Atlas der Schweiz: Themen</h3>
-                <ul>
-                    <li><a linkTo="stockente" href="#">Die Stockente und andere Wasservögel</a></li>
-                    <li>Gefahren des schmelzenden Permafrostes</li>
-                    <li>Zersiedelung und Mobilität - eine Herausforderung?</li>
-                    <li>Der Jahrhundertsommer 2003 uns seine Konsequenzen</li>
-                    <li>Die Globalisierung bringt neue Vögel und lässt alte aussterben</li>
-                </ul>
-            </div>
-            <div id="stockente" class="infoContent info-is-hidden">
-                <h3>Stockente in der Schweiz</h3>
-                <img src="img/infomaterial/stockente.jpg" alt="">
-                <p>Die Stockente (Anas platyrhynchos), in älterer Literatur auch noch als Märzente[1] bezeichnet, ist eine Vogelart aus der Familie der Entenvögel (Anatidae).
-                <br><br>
-                Die Stockente ist die größte und am häufigsten vorkommende Schwimmente Europas und die Stammform der Hausente. Ausgewachsene Männchen sind mit ihrem grünmetallischen Kopf, dem gelben Schnabel und dem weißen Halsring unverwechselbar. Die Weibchen sind unscheinbarer hellbraun mit einer dunklen Längsstreifung. Im Flug wird bei beiden Geschlechtern der blaue Flügelspiegel sichtbar, der weiß umrandet ist. Der Flug ist schnell und gerade. Stockenten fliegen fast senkrecht auf.
-                <h4>Verbreitung</h4>
-                Stadtenten besiedeln Gewässer in Bereich von Städten, besonders Teiche und Weiher in Parks, aber auch Flüsse, die die Städte durchfließen und andere natürliche Gewässer, wie etwa Seen, im Bereich von Städten. Selbst größere Brunnen werden von der Stockente besiedelt.
-                Im städtischen Raum wählen Stockenten Neststandorte, die aus menschlicher Sicht häufig ausgefallen wirken. Dazu zählen Nester auf Balkonen, auf Flachdächern von Hochhäusern sowie in Schuppen oder Ställen.
-                <h4>Stimme</h4>
-                Die weibliche Stockente quakt mit 32db am Morgen und mit 45db am Abend. Es ist bisher nicht erforscht wie diese Differenz sich im Paarungsverhalten verändert beziehungsweise manifestiert. 
-                <br><br>
-                <audio controls>
-                    <source src="img/infomaterial/stockente_quaken.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <br><br>
-                Im Vergleich dazu das Quaken einer Quackente:
-                <br><br>
-                <audio controls>
-                    <source src="img/infomaterial/quackente.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <br><br>
-                Häufig sind dunkle, oft fast rein schwarze, braune oder dunkelgrüne Individuen zu beobachten. Oft tritt ein weißer „Latz“ an der Brust auf, was auf eine Bastardisierung mit weißen Hausenten zurückgehen dürfte. Seltener sind Individuen mit weißen oder im Vergleich zu Stockenten helleren Partien. Nicht selten sind bei Männchen lediglich die Deckfedern der Flügel mehr oder minder dunkel und der weiße Halsring verbreitert oder zum Latz vergrößert. In Hamburg sind in der Innenstadt 13 Prozent der Stockenten fehlgefärbt, am Stadtrand jedoch nur 0,7 Prozent.
-                Um eine weitere Bastardisierung der Art mit Hausenten auszuschließen, werden solche fehlgefärbte Individuen bevorzugt abgeschossen.
-                <h4>Dokumentation über Stockenten</h4>
-                <iframe width="100%" height="200" src="//www.youtube.com/embed/sdhu5TNfOsE?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-                <h4>Dokumentation über Arten vertreten in den Weihern der Schweiz</h4>
-                <iframe width="100%" height="200" src="//www.youtube.com/embed/TK5GaeJFBrk" frameborder="0" allowfullscreen></iframe>
-                </p>
-            </div>
+                    <h3>Atlas der Schweiz: Themen</h3>
+                    <ul>
+                        <li><a linkTo="stockente" href="#">Die Stockente und andere Wasservögel</a></li>
+                        <li>Gefahren des schmelzenden Permafrostes</li>
+                        <li>Zersiedelung und Mobilität - eine Herausforderung?</li>
+                        <li>Der Jahrhundertsommer 2003 uns seine Konsequenzen</li>
+                        <li>Die Globalisierung bringt neue Vögel und lässt alte aussterben</li>
+                    </ul>
+                </div>
+                <div id="stockente" class="infoContent">
+                    <h3>Stockente in der Schweiz</h3>
+                    <img src="img/infomaterial/stockente.jpg" alt="">
+                    <p>Die Stockente (Anas platyrhynchos), in älterer Literatur auch noch als Märzente[1] bezeichnet, ist eine Vogelart aus der Familie der Entenvögel (Anatidae).
+                    <br><br>
+                    Die Stockente ist die größte und am häufigsten vorkommende Schwimmente Europas und die Stammform der Hausente. Ausgewachsene Männchen sind mit ihrem grünmetallischen Kopf, dem gelben Schnabel und dem weißen Halsring unverwechselbar. Die Weibchen sind unscheinbarer hellbraun mit einer dunklen Längsstreifung. Im Flug wird bei beiden Geschlechtern der blaue Flügelspiegel sichtbar, der weiß umrandet ist. Der Flug ist schnell und gerade. Stockenten fliegen fast senkrecht auf.
+                    <h4>Verbreitung</h4>
+                    Stadtenten besiedeln Gewässer in Bereich von Städten, besonders Teiche und Weiher in Parks, aber auch Flüsse, die die Städte durchfließen und andere natürliche Gewässer, wie etwa Seen, im Bereich von Städten. Selbst größere Brunnen werden von der Stockente besiedelt.
+                    Im städtischen Raum wählen Stockenten Neststandorte, die aus menschlicher Sicht häufig ausgefallen wirken. Dazu zählen Nester auf Balkonen, auf Flachdächern von Hochhäusern sowie in Schuppen oder Ställen.
+                    <h4>Stimme</h4>
+                    Die weibliche Stockente quakt mit 32db am Morgen und mit 45db am Abend. Es ist bisher nicht erforscht wie diese Differenz sich im Paarungsverhalten verändert beziehungsweise manifestiert. 
+                    <br><br>
+                    <audio controls>
+                        <source src="img/infomaterial/stockente_quaken.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <br><br>
+                    Im Vergleich dazu das Quaken einer Quackente:
+                    <br><br>
+                    <audio controls>
+                        <source src="img/infomaterial/quackente.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <br><br>
+                    Häufig sind dunkle, oft fast rein schwarze, braune oder dunkelgrüne Individuen zu beobachten. Oft tritt ein weißer „Latz“ an der Brust auf, was auf eine Bastardisierung mit weißen Hausenten zurückgehen dürfte. Seltener sind Individuen mit weißen oder im Vergleich zu Stockenten helleren Partien. Nicht selten sind bei Männchen lediglich die Deckfedern der Flügel mehr oder minder dunkel und der weiße Halsring verbreitert oder zum Latz vergrößert. In Hamburg sind in der Innenstadt 13 Prozent der Stockenten fehlgefärbt, am Stadtrand jedoch nur 0,7 Prozent.
+                    Um eine weitere Bastardisierung der Art mit Hausenten auszuschließen, werden solche fehlgefärbte Individuen bevorzugt abgeschossen.
+                    <h4>Dokumentation über Stockenten</h4>
+                    <iframe width="100%" height="200" src="//www.youtube.com/embed/sdhu5TNfOsE?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+                    <h4>Dokumentation über Arten vertreten in den Weihern der Schweiz</h4>
+                    <iframe width="100%" height="200" src="//www.youtube.com/embed/TK5GaeJFBrk" frameborder="0" allowfullscreen></iframe>
+                    </p>
+                </div>
 
-            <div id="uebervoelkerung" class="infoContent info-is-hidden">
-                <h3>Überalterung und Bevölkerungswachstum</h3>
-                <p>Seit 2007 wächst die Wohnbevölkerung der Schweiz jedes Jahr um 88‘000 Personen (dies entspricht der Stadt Luzern). Jede Sekunde wird hierzulande ein Quadratmeter Naturfläche zubetoniert. - Die Weltbevölkerung nimmt jeden Tag um 220‘000 Menschen zu.<br><br>
-                Mit diesem starken Bevölkerungswachstum, hier wie weltweit, verbauen wir unseren Kindern im wahrsten Sinne des Wortes die Zukunft!
-                <img src="img/infomaterial/uebervoelkerung_1.jpg" alt="">
-                Im Laufe des 20. Jahrhunderts ist die Zahl der älteren Menschen gestiegen, während die Anteile der Jugendlichen und der Personen im erwerbsfähigen Alter (20 bis 64 Jahre) gesunken sind. Die Form der Alterspyramide hat sich dabei von einer «Pyramide» (1900) über eine «Glocke» (1950) zu einer «Tanne» (2010) gewandelt. Für die Schweiz ist heute ein Altersaufbau typisch, bei dem die «Baby-Boom»-Generation dominiert. Ihr steht eine schwächer besetzte Jugendgeneration und eine wachsende Zahl älterer Menschen gegenüber.
-                <img src="img/infomaterial/altersaufbau.gif" alt="">
-                Eine Studie des Bundesamtes für Statistik zeigt, dass bis 2024 Jahren die Bevölkerung in der Schweiz um 12,5 Prozent zunehmen wird. Der Hauptgrund dafür ist die internationale Zuwanderung.
-                <iframe src='http://www.srf.ch/player/tv/tagesschau--vom-29-03-2011/videoembed/schweiz-bevoelkerung-waechst-weiter?id=aee2791d-d6be-4fd9-bb51-24280d085886&mode=embed' width='100%' height='200' frameborder='0' name='Tagesschau  vom 29.03.2011'></iframe>
+                <div id="uebervoelkerung" class="infoContent">
+                    <h3>Überalterung und Bevölkerungswachstum</h3>
+                    <p>Seit 2007 wächst die Wohnbevölkerung der Schweiz jedes Jahr um 88‘000 Personen (dies entspricht der Stadt Luzern). Jede Sekunde wird hierzulande ein Quadratmeter Naturfläche zubetoniert. - Die Weltbevölkerung nimmt jeden Tag um 220‘000 Menschen zu.<br><br>
+                    Mit diesem starken Bevölkerungswachstum, hier wie weltweit, verbauen wir unseren Kindern im wahrsten Sinne des Wortes die Zukunft!
+                    <img src="img/infomaterial/uebervoelkerung_1.jpg" alt="">
+                    Im Laufe des 20. Jahrhunderts ist die Zahl der älteren Menschen gestiegen, während die Anteile der Jugendlichen und der Personen im erwerbsfähigen Alter (20 bis 64 Jahre) gesunken sind. Die Form der Alterspyramide hat sich dabei von einer «Pyramide» (1900) über eine «Glocke» (1950) zu einer «Tanne» (2010) gewandelt. Für die Schweiz ist heute ein Altersaufbau typisch, bei dem die «Baby-Boom»-Generation dominiert. Ihr steht eine schwächer besetzte Jugendgeneration und eine wachsende Zahl älterer Menschen gegenüber.
+                    <img src="img/infomaterial/altersaufbau.gif" alt="">
+                    Eine Studie des Bundesamtes für Statistik zeigt, dass bis 2024 Jahren die Bevölkerung in der Schweiz um 12,5 Prozent zunehmen wird. Der Hauptgrund dafür ist die internationale Zuwanderung.
+<!--                     <iframe src='http://www.srf.ch/player/tv/tagesschau--vom-29-03-2011/videoembed/schweiz-bevoelkerung-waechst-weiter?id=aee2791d-d6be-4fd9-bb51-24280d085886&mode=embed' width='100%' height='200' frameborder='0' name='Tagesschau  vom 29.03.2011'></iframe> -->
 
-                </p>
+                    </p>
+                </div>
             </div>
-            <button class="icon info" id="infoCloseButton">close</button>
+            
         </div>
         </div>
         <div class="interfacebuttons">

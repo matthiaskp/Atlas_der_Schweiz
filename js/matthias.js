@@ -160,24 +160,32 @@ $(".infomenu>ul>li>a").click(function(e){
 	console.log("info ausgewählt");
 	e.preventDefault();
 	var infoPointClicked = $(this).attr("linkTo");
-	$(".infoContent").addClass("info-is-hidden").removeClass("info-is-active");
-	$(".infomenu").addClass("info-is-hidden").removeClass("info-is-active");
-	$("#" + infoPointClicked).removeClass("info-is-hidden").addClass("info-is-active");
+//	$(".infoContent").addClass("info-is-hidden").removeClass("info-is-active");
+//	$(".infomenu").addClass("info-is-hidden").removeClass("info-is-active");
+
+//	$("#" + infoPointClicked).removeClass("info-is-hidden").addClass("info-is-active");
+	$(".infomenu").fadeOut(300);
+	$("#" + infoPointClicked).fadeIn(500).delay(300);
 	$("#info_zurueck").fadeIn(300);
 }); 
 
 $("#infoCloseButton").click(function(e){
 	e.preventDefault();
+	$(".infoContent").fadeOut(500);
 	$("#info_zurueck").delay(100).fadeOut(300);
-	$(".infoContent").addClass("info-is-hidden").removeClass("info-is-active");
-	$(".infomenu").addClass("info-is-active").removeClass("info-is-hidden");
+	$(".infomenu").fadeIn(500);
+
+//	$(".infoContent").addClass("info-is-hidden").removeClass("info-is-active").hide();
+//	$(".infomenu").addClass("info-is-active").removeClass("info-is-hidden");
 });
 
 $("#info_zurueck").click(function(e){
 	e.preventDefault();
 	$("#info_zurueck").delay(100).fadeOut(300);
-	$(".infoContent").addClass("info-is-hidden").removeClass("info-is-active");
-	$(".infomenu").addClass("info-is-active").removeClass("info-is-hidden");
+	$(".infoContent").fadeOut(300);
+	$(".infomenu").fadeIn(300);
+//	$(".infoContent").addClass("info-is-hidden").removeClass("info-is-active");
+//	$(".infomenu").addClass("info-is-active").removeClass("info-is-hidden");
 });
 
 
