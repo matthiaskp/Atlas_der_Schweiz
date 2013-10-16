@@ -41,18 +41,19 @@
         <![endif]-->
         <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
     </head>
-    <body class="container container_10" style="background-image: url(img/schweiz_default.png); background-size: 100% 100%;">
+    <body class="container container_10" style="background-image: url(img/schweiz_default.png); background-size: auto 100%;">
         <!-- MENU -->
         <nav class="one-fifth menuContainer">
             <header>
                 <div class="menucontrols clearfix">
-                    <button class="menubutton icon zurueck" id="zurueckButton"></button>
+                    <button class="menubutton icon zurueckbutton" id="zurueckButton"></button>
                     <button class="menubutton icon schliessen" id="menu_schliessen"></button>
                 </div>
-                <input id="suchFeld" type="text" value="" placeholder="Suchen..."></input>
-                <div id="menuTitel">
-                    <h2 class="icon big themen">Themen</h2>
-                    <span class="smalltext">Verkehr > Schienenverkehr</span>
+                <div class="suche_und_titel">
+                    <input id="suchFeld" type="text" value="" placeholder="Suchen..."></input>
+                    <div id="menuTitel">
+                        <h2 class="icon big themen">Themen</h2>
+                    </div>
                 </div>
             </header>
             <div class="menu">
@@ -69,6 +70,7 @@
                     <li class="icon legende">
                         <a linkTo="legende" href="#">Legende</a>
                     </li>
+                    <li class="placeholder"></li>
                     <li class="icon einstellungen">
                         <a class="menu-to-overlay" linkTo="einstellungen" href="#">Einstellungen</a>
                     </li>
@@ -503,7 +505,7 @@
         <!-- OVERLAY -->
         <!-- <div class="menu-overlay menu-overlay-is-hidden " id="hilfe-overlay">
             <div class="menu-overlay-inner">
-                <button class="icon themen menu-overlay-schliessen ">menu</button>
+                <button class="icon schliessen menubutton menu-overlay-schliessen" >menu</button>
                 <h2>Hilfe</h2>
                 <p>bla</p>
             </div>
@@ -511,7 +513,7 @@
 
         <div class="menu-overlay menu-overlay-is-hidden " id="einstellungen-overlay">
             <div class="menu-overlay-inner menu-overlay-inner-is-hidden ">
-                <button class="icon themen menu-overlay-schliessen">menu</button>
+                <button class="icon schliessen menubutton menu-overlay-schliessen" >menu</button>
                 <h2>Einstellungen</h2>
                 <p>bla</p>
             </div>
@@ -519,34 +521,37 @@
 
         <div class="menu-overlay menu-overlay-is-hidden" id="about-overlay">
             <div class="menu-overlay-inner menu-overlay-inner-is-hidden ">
-                <button class="icon themen menu-overlay-schliessen" >menu</button>
+                <button class="icon schliessen menubutton menu-overlay-schliessen" >menu</button>
                 <h2>About</h2>
                 <p>bla</p>
             </div>
         </div> -->
 
-        <!-- INFO -->
+               <!-- INFO -->
         <div class="infocontainer two-fifth">
-            <h2>Info</h2>
-            <h3>Klasse 3c Zürich Wiedikon</h3>
-            <ul>
-                <li>Gletscher in der Eiszeit</li>
-                <li>Die Bevölkerungsentwicklung von Zürich</li>
-                <li>Überalterung und Bevölkerungswachstum</li>
-                <li>Tourismusland Schweiz</li>
-                <li>Wasser und Strom - unsere Ressourcen</li>
-                <li>Die Schweiz als Industrieland</li>
-            </ul>
+           <button class="menubutton icon zurueckbutton" id="info_zurueck"></button>
+            <div class="infomenu info-is-active">
+                <h2>Info</h2>
+                <h3>Klasse 3c Zürich Wiedikon</h3>
+                <ul class="infolist">
+                    <li>Gletscher in der Eiszeit</li>
+                    <li><a linkTo="uebervoelkerung" href="#">Die Bevölkerungsentwicklung von Zürich</a></li>
+                    <li>Überalterung und Bevölkerungswachstum</li>
+                    <li>Tourismusland Schweiz</li>
+                    <li>Wasser und Strom - unsere Ressourcen</li>
+                    <li>Die Schweiz als Industrieland</li>
+                </ul>
 
-            <h3>Atlas der Schweiz: Themen</h3>
-            <ul>
-                <li>Gefahren des schmelzenden Permafrostes</li>
-                <li>Zersiedelung und Mobilität - eine Herausforderung?</li>
-                <li>Der Jahrhundertsommer 2003 uns seine Konsequenzen</li>
-                <li>Die Globalisierung bringt neue Vögel und lässt alte aussterben</li>
-            </ul>
-
-            <div id="stockente" style="display: none" >
+                <h3>Atlas der Schweiz: Themen</h3>
+                <ul class="infolist">
+                    <li><a linkTo="stockente" href="#">Die Stockente und andere Wasservögel</a></li>
+                    <li>Gefahren des schmelzenden Permafrostes</li>
+                    <li>Zersiedelung und Mobilität - eine Herausforderung?</li>
+                    <li>Der Jahrhundertsommer 2003 uns seine Konsequenzen</li>
+                    <li>Die Globalisierung bringt neue Vögel und lässt alte aussterben</li>
+                </ul>
+            </div>
+            <div id="stockente" class="infoContent info-is-hidden">
                 <h3>Stockente in der Schweiz</h3>
                 <img src="img/infomaterial/stockente.jpg" alt="">
                 <p>Die Stockente (Anas platyrhynchos), in älterer Literatur auch noch als Märzente[1] bezeichnet, ist eine Vogelart aus der Familie der Entenvögel (Anatidae).
@@ -557,9 +562,19 @@
                 Im städtischen Raum wählen Stockenten Neststandorte, die aus menschlicher Sicht häufig ausgefallen wirken. Dazu zählen Nester auf Balkonen, auf Flachdächern von Hochhäusern sowie in Schuppen oder Ställen.
                 <h4>Stimme</h4>
                 Die weibliche Stockente quakt mit 32db am Morgen und mit 45db am Abend. Es ist bisher nicht erforscht wie diese Differenz sich im Paarungsverhalten verändert beziehungsweise manifestiert. 
-                <audio src="img/infomaterial/stockente_quaken.mp3"></audio>
+                <br><br>
+                <audio controls>
+                    <source src="img/infomaterial/stockente_quaken.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <br><br>
                 Im Vergleich dazu das Quaken einer Quackente:
-                <audio src="img/infomaterial/queackente.mp3"></audio>
+                <br><br>
+                <audio controls>
+                    <source src="img/infomaterial/quackente.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <br><br>
                 Häufig sind dunkle, oft fast rein schwarze, braune oder dunkelgrüne Individuen zu beobachten. Oft tritt ein weißer „Latz“ an der Brust auf, was auf eine Bastardisierung mit weißen Hausenten zurückgehen dürfte. Seltener sind Individuen mit weißen oder im Vergleich zu Stockenten helleren Partien. Nicht selten sind bei Männchen lediglich die Deckfedern der Flügel mehr oder minder dunkel und der weiße Halsring verbreitert oder zum Latz vergrößert. In Hamburg sind in der Innenstadt 13 Prozent der Stockenten fehlgefärbt, am Stadtrand jedoch nur 0,7 Prozent.
                 Um eine weitere Bastardisierung der Art mit Hausenten auszuschließen, werden solche fehlgefärbte Individuen bevorzugt abgeschossen.
                 <h4>Dokumentation über Stockenten</h4>
@@ -569,7 +584,7 @@
                 </p>
             </div>
 
-            <div id="ueberalterung">
+            <div id="uebervoelkerung" class="infoContent info-is-hidden">
                 <h3>Überalterung und Bevölkerungswachstum</h3>
                 <p>Seit 2007 wächst die Wohnbevölkerung der Schweiz jedes Jahr um 88‘000 Personen (dies entspricht der Stadt Luzern). Jede Sekunde wird hierzulande ein Quadratmeter Naturfläche zubetoniert. - Die Weltbevölkerung nimmt jeden Tag um 220‘000 Menschen zu.<br><br>
                 Mit diesem starken Bevölkerungswachstum, hier wie weltweit, verbauen wir unseren Kindern im wahrsten Sinne des Wortes die Zukunft!
@@ -581,8 +596,7 @@
 
                 </p>
             </div>
-            <button class="icon info schliessen" id="infoCloseButton">close</button>
-        </div>
+            <button class="menubutton icon info schliessen" id="infoCloseButton">close</button>
         </div>
         <div class="interfacebuttons">
             <button class="icon infobutton" id="infoButton">info</button>

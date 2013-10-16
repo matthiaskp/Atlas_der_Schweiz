@@ -80,7 +80,10 @@ function menuSchliessen () {
 	menuLevelActive = 1;
 	checkMenuLevel(menuLevelActive,null);
 	$(".menuContainer").removeClass("menuContainerVisible two-fifth").addClass("menuContainerHidden one-fifth");
+	$(".menuContainer").removeClass("grid_10")
+	$('.livesearch').hide();
 	$(".menu").css("width", "500%");
+	$('.menu').delay(300).fadeIn();
 	$('#kartenvorschau').hide();
 };
 
@@ -245,6 +248,13 @@ function manageTitleAndBc (clickedLink, menuLevelActive, menuLevelClicked) {
 		/*$("#menuTitel > h2").prepend("<img src=\"../img/icons/icon_" + linkTo + ".png\" />");*/
 		$("#menuTitel").fadeIn().delay(500);
 	}
+	if(menuLevelActive==2||menuLevelActive==3){
+		if($(clickedLink).parent().parent().attr('id') == "themen"){
+			var activeTopicIcon = $(clickedLink).attr('linkTo');
+			console.log('AKTIVES THEMA: ' + $(clickedLink).attr('linkTo'));
+			$('#layerTemplate').attr('topicicon',activeTopicIcon);
+		}
+	};
 
 	// else if (menuLevelClicked<menuLevelActive){
 	// 	for (var i = menuLevelClicked; i <= 6; i++) {
@@ -309,7 +319,7 @@ function getKartenFarben (kartenName, layerClass){
 	console.log('farben an: '+".kartenfarben."+layerClass);
 	for (var i = 0; i <= aktuelleKartenFarben.length; i++) {
 		$(".kartenfarben."+layerClass).append("<span class=\"kartenFarbe\" id=\"kartenFarbe" + i + "\"> </span>");
-		$("."+layerClass+" .kartenFarbe").css("height", (100/aktuelleKartenFarben.length) +"%");
+		$("."+layerClass+" .kartenFarbe").css("height", (105/aktuelleKartenFarben.length) +"%");
 		$("."+layerClass+" #kartenFarbe" + i).css("background-color", aktuelleKartenFarben[i]);
 	};
 

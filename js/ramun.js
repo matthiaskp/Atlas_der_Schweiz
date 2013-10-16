@@ -67,6 +67,7 @@ $( document ).ready(function() {
 		layercount ++;
 		var layerclass = "layer-"+layercount;
 		layerControlObject.layerClass = layerclass;
+		layerControlObject.layerIcon = $('#layerTemplate').attr('topicicon');
 
 		var karte = $('.menuLinkActive').attr('linkTo');
 		
