@@ -1,0 +1,11 @@
+.active_State_color {
+	color: blue;
+}
+.settings_overlay{
+	border="0" bordercolor="#FFFFFF";
+	background-color:#FFFFFF;
+	width="80%";
+}
+.menu-overlay-inner{
+	overflow-y: scroll;
+}
