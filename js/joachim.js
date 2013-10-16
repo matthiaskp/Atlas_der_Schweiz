@@ -13,6 +13,8 @@ $( document ).ready(function() {
 	    	orientation: "horizontal",
 		    slide: function( event, ui ) {
         		$( "#years" ).text(ui.values[ 0 ] +" – "+ ui.values[ 1 ] );
+        		var imagepath = 'url(img/timeline/'+ui.values[0]+'_niederschlag.jpg)'
+        		$("body").css('background-image',imagepath);
       		}
     	});
     	$( "#years" ).text($( "#timelineslider" ).slider( "values", 0 ) +" – "+ $( "#timelineslider" ).slider( "values", 1 ) );      
