@@ -32,7 +32,9 @@ $( document ).ready(function() {
 	$('#suchFeld').focus(function () {
 		$('.menu').hide();
 		$('.livesearch').show();
-		$('.menuContainer').addClass('grid_10');
+		setTimeout(function(){
+		  $('.menuContainer').addClass('grid_10');
+		}, 100);
 	})
 	// INSTALL TO HOME SCREEN INFO
 	if (window.navigator.standalone === false) {

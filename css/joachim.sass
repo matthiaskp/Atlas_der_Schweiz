@@ -408,6 +408,7 @@ body.helper
 	height: 55px
 	background: $lightgray
 #suchFeld
+	box-sizing: border-box
 	position: absolute
 	background: transparent
 	top: 0
@@ -564,7 +565,7 @@ body.helper
 		position: absolute
 		width: 100%
 		height: 100%
-		background-size: 100% 100%
+		background-size: auto 100%
 .interfacebuttons
 	button
 		z-index: 4
@@ -581,11 +582,11 @@ body.helper
 	z-index: 5
 	overflow-y: scroll
 	overflow-x: hidden
-	-webkit-transition: left 0.3s ease         
-	-moz-transition: left 0.3s ease
-	-o-transition: left 0.3s ease
-	-ms-transition: left 0.3s ease
-	transition: left 0.3s ease
+	// -webkit-transition: left 0.3s ease         
+	// -moz-transition: left 0.3s ease
+	// -o-transition: left 0.3s ease
+	// -ms-transition: left 0.3s ease
+	// transition: left 0.3s ease
 	.infoContent
 		width: 90%
 	.infomenu

@@ -63,15 +63,25 @@ $( document ).ready(function() {
 		imageBackground: "background-image: url(px/Verkehr.png)"
 	};
 
-	function newLayer () {
+	function newLayer (karte,kartenname,kartenicon) {
 		layercount ++;
 		var layerclass = "layer-"+layercount;
 		layerControlObject.layerClass = layerclass;
-		layerControlObject.layerIcon = $('#layerTemplate').attr('topicicon');
-
-		var karte = $('.menuLinkActive').attr('linkTo');
+		if (karte == null){
+			layerControlObject.layerIcon = $('#layerTemplate').attr('topicicon');
+			var karte = $('.menuLinkActive').attr('linkTo');
+			var kartenname = $("#kartenvorschau > img").attr("src");
+		}
+		else{
+			layerControlObject.layerIcon = kartenicon;
+			var karte = karte;
+			var kartenname = kartenname;
+		}
 		
-		var kartenname = $("#kartenvorschau > img").attr("src");
+
+		
+		
+		
 		layerControlObject.imageBackground = 'url(' + kartenname + ')';
 
 		var templateString = $("#layerTemplate").html();
@@ -122,5 +132,19 @@ $( document ).ready(function() {
 	$( "#button_karte_auswaehlen" ).click(function(){
 		layerControlObject.layerTitle = $('.menuLinkActive').text();
 		newLayer();
+	});
+		// INFOCLICK
+	$('.infolist a').click(function () {
+		if ($(this).attr('linkto') == 'uebervoelkerung'){
+
+			layerControlObject.layerTitle = 'Bevölkerungsverteilung'
+			newLayer('bevoelkerungsverteilung','img/kartenvorschau/bevoelkerungsverteilung.png','staat_und_politik');
+
+			layerControlObject.layerTitle = 'Bevölkerungsdichte Aktuell'
+			newLayer('bevoelkerungsdichte_aktuell','img/kartenvorschau/Einpersonenhaushalte_1970.png','wirtschaft');
+
+			layerControlObject.layerTitle = 'Arbeitskonzentrationsdichte'
+			newLayer('teichrohrsaenger','img/kartenvorschau/teichrohrsaenger.png','gesellschaft');
+		}
 	});
 });
