@@ -6,7 +6,7 @@ $( document ).ready(function() {
 	function timelineinit () {
 		$('#timelineslider').slider({
 			range: "min",
-	        min: 0, 
+	        min: 1, 
 	        max: 12, 
 	        step: 1,
 	        value: 1,
@@ -42,8 +42,8 @@ $( document ).ready(function() {
 	}
 	// PREVENT SCROLLBOUNCE
 	function stopScrolling( touchEvent ) { touchEvent.preventDefault(); }
-	/*document.addEventListener( 'touchstart' , stopScrolling , false );*/
-	document.addEventListener( 'touchmove' , stopScrolling , false );
+	/*document.addEventListener( 'touchstart' , stopScrolling , false );
+	document.addEventListener( 'touchmove' , stopScrolling , false );*/
 
 	// SET BODY HEIGHT
 	setBodySize();

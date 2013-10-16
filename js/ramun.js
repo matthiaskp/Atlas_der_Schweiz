@@ -32,6 +32,7 @@ $( document ).ready(function() {
 	};
 
 	$( ".layercontainer" ).sortable({
+		scroll: false,
 		tolerance: 'pointer',
 		cursor: 'pointer',
 		dropOnEmpty: true,
@@ -48,7 +49,7 @@ $( document ).ready(function() {
 	    		console.log($(this));
 	    		var ebene= $(this).attr('data-layer');
 	    		console.log("bewegte ebene: " + ebene);
-	    		$('#'+ ebene).css('z-index',($(this).parent().index()*-10-1));
+	    		$('#'+ ebene).css('z-index',($(this).index()*-10-1));
 			});
 	    }
 	});
@@ -73,7 +74,9 @@ $( document ).ready(function() {
 
 		var templateString = $("#layerTemplate").html();
 		var layerAppend = _.template(templateString, layerControlObject);
-	    $(".layercontainer").prepend(layerAppend);
+	    var $newLayer = $(layerAppend)
+	    $(".layercontainer").prepend($newLayer);
+
 	    sliderinit();
 	    onoffswitchinit();
 	    getKartenFarben(karte, layerclass);
@@ -83,33 +86,36 @@ $( document ).ready(function() {
 	    $(".bglayercontainer").append(bgLayerAppend);
 
 	    //PORTLETS
-		$( ".layer header" ).click(function() {
-			console.log('clicked: ' + $(this));
-			$(".is-expanded").not($(this).parent()).each(function(){									//reset
+		$newLayer.click(function() {
+			$(".layer.is-expanded").not($(this)).each(function(){									//reset
+				$(this).children( ".controls" ).toggleClass('is-expanded', function(){
+					$(this).parent().removeClass( "is-expanded");
+						//console.log("reset");
+				});	
+			});
+
+			$(this).toggleClass('is-expanded').children('.controls').toggleClass('is-expanded');
+
+			/*$(".layer.is-expanded").not($(this).parent()).each(function(){									//reset
 				$(this).children( ".controls" ).slideToggle(500, function(){
-					$(this).parent().animate({"margin-left":'317px','margin-right':'-317px'}, 500 , function(){
-						$(this).removeClass( "is-expanded");
+					$(this).parent().removeClass( "is-expanded");
 						//console.log("reset");
 					});	
 				});
-			});
 			if ($(this).parent().hasClass("is-expanded")){												//hide
 				$(this).next( ".controls" ).slideToggle(500, function(){
-					$(this).parent().animate({"margin-left":'317px','margin-right':'-317px'}, 500 , function(){
-						$(this).removeClass( "is-expanded");
+					$(this).parent().removeClass( "is-expanded");
 						//console.log("hidden");
 					});	
-				});
 			}
 			else {
-				$(this).parent().animate({"margin-left":'0','margin-right':'0'}, 500 , function(){					//expand
-					$(this).addClass( "is-expanded");
-					$(this).children( ".controls" ).slideToggle();
+				$(this).parent().addClass( "is-expanded");
+				$(this).parent().children( ".controls" ).slideToggle();
 					//console.log("is-expanded");
-				});
-			}
+			}*/
+
 		});
-	}
+	};
 
 	$( "#button_karte_auswaehlen" ).click(function(){
 		layerControlObject.layerTitle = $('.menuLinkActive').text();
