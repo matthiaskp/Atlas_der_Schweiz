@@ -477,12 +477,13 @@
                 <button class="icon" id="ausrichtenButton">ausrichten</button>
             </div>
         </div>
-        <div id="kartenFarben"></div>
-        <!-- LAYERMANAGER -->
+<!--         <div id="kartenFarben"></div>
+ -->        <!-- LAYERMANAGER -->
         <script type="text/html" id="layerTemplate">
             <div class="grid_3 prefix_7">
                 <div class="layer <%= layerClass %>" data-layer="<%= layerClass %>">
                     <header>
+                        <div class="kartenfarben <%= layerClass %>"></div>
                         <p class="icon <%= layerIcon %>"><%= layerTitle %></p>
                     </header>
                     <div class="controls">

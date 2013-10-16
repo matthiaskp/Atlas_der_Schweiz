@@ -16,7 +16,7 @@ $( document ).ready(function() {
 	var layercount = 0;
 
 	function sliderinit () {
-		$('.opacityslider:first').slider({ 
+		$('.controls .opacityslider:first').slider({ 
 			range: "min",
 	        min: 0, 
 	        max: 1, 
@@ -63,7 +63,10 @@ $( document ).ready(function() {
 
 	function newLayer () {
 		layercount ++;
-		layerControlObject.layerClass = "layer-"+layercount;
+		var layerclass = "layer-"+layercount;
+		layerControlObject.layerClass = layerclass;
+
+		var karte = $('.menuLinkActive').attr('linkTo');
 		
 		var kartenname = $("#kartenvorschau > img").attr("src");
 		layerControlObject.imageBackground = 'url(' + kartenname + ')';
@@ -73,6 +76,7 @@ $( document ).ready(function() {
 	    $(".layercontainer").prepend(layerAppend);
 	    sliderinit();
 	    onoffswitchinit();
+	    getKartenFarben(karte, layerclass);
 
 	    var bgLayerString = $("#bgLayerTemplate").html();
 	    var bgLayerAppend = _.template(bgLayerString, layerControlObject);

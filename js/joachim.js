@@ -5,19 +5,19 @@ $( document ).ready(function() {
 	});
 	function timelineinit () {
 		$('#timelineslider').slider({
-			range: true,
-	        min: 1, 
+			range: "min",
+	        min: 0, 
 	        max: 12, 
 	        step: 1,
-	        values: [ 4, 8 ],
+	        value: 1,
 	    	orientation: "horizontal",
 		    slide: function( event, ui ) {
-        		$( "#years" ).text(ui.values[ 0 ] +" – "+ ui.values[ 1 ] );
-        		var imagepath = 'url(img/timeline/'+ui.values[0]+'_niederschlag.jpg)'
+        		$( "#years" ).text(ui.value);
+        		var imagepath = 'url(img/timeline/'+ui.value+'_niederschlag.jpg)'
         		$("body").css('background-image',imagepath);
       		}
     	});
-    	$( "#years" ).text($( "#timelineslider" ).slider( "values", 0 ) +" – "+ $( "#timelineslider" ).slider( "values", 1 ) );      
+    	$( "#years" ).text($( "#timelineslider" ).slider( "value" ) );      
 	};
 	timelineinit();
 	// INFO

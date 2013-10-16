@@ -81,6 +81,7 @@ function menuSchliessen () {
 	checkMenuLevel(menuLevelActive,null);
 	$(".menuContainer").removeClass("menuContainerVisible two-fifth").addClass("menuContainerHidden one-fifth");
 	$(".menu").css("width", "500%");
+	$('#kartenvorschau').hide();
 };
 
 //////////////////////////// Kartenvorschau 
@@ -90,7 +91,7 @@ $("ul[menulevel=5] > li > a").click(function(e){
 	var karte = $(this).attr("linkTo");
 	$("#kartenvorschau > img").attr("src", "img/kartenvorschau/" + karte + ".png");
 	$("#kartenvorschau").show();
-	getKartenFarben(karte);
+	// getKartenFarben(karte);
 });
 
 
@@ -231,7 +232,7 @@ function manageTitleAndBc (clickedLink, menuLevelActive, menuLevelClicked) {
 
 });
 
-function getKartenFarben (kartenName){
+function getKartenFarben (kartenName, layerClass){
 	var kartenFarben = [
 		{name: 'entwicklung_bevoelkerung_jaehrliche_angaben', farben: ['#be3c14','#d88d53','#f2de91','#a6aba3','#384da6']},
 		{name: 'entwicklung_volkszaehlungen', farben: ['#be3c14','#d88d53','#f2de91','#a6aba3','#384da6']},
@@ -264,10 +265,11 @@ function getKartenFarben (kartenName){
 	var result = _.where(kartenFarben, {name: kartenName});
 	var aktuelleKartenFarben = result[0].farben;
 	console.log(aktuelleKartenFarben);
-	$(".kartenFarbe").css("height", (100/aktuelleKartenFarben.length) +"%");
+	console.log('farben an: '+".kartenfarben."+layerClass);
 	for (var i = 0; i <= aktuelleKartenFarben.length; i++) {
-		$("#kartenFarben").append("<span class=\"kartenFarbe\" id=\"kartenFarbe" + i + "\"> </span>");
-		$("#kartenFarbe" + i).css("background-color", aktuelleKartenFarben[i]);
+		$(".kartenfarben."+layerClass).append("<span class=\"kartenFarbe\" id=\"kartenFarbe" + i + "\"> </span>");
+		$("."+layerClass+" .kartenFarbe").css("height", (100/aktuelleKartenFarben.length) +"%");
+		$("."+layerClass+" #kartenFarbe" + i).css("background-color", aktuelleKartenFarben[i]);
 	};
 
 };
