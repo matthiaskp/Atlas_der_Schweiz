@@ -32,6 +32,7 @@ $( document ).ready(function() {
 	};
 
 	$( ".layercontainer" ).sortable({
+		scroll: false,
 		tolerance: 'pointer',
 		cursor: 'pointer',
 		dropOnEmpty: true,
@@ -48,7 +49,7 @@ $( document ).ready(function() {
 	    		console.log($(this));
 	    		var ebene= $(this).attr('data-layer');
 	    		console.log("bewegte ebene: " + ebene);
-	    		$('#'+ ebene).css('z-index',($(this).parent().index()*-10-1));
+	    		$('#'+ ebene).css('z-index',($(this).index()*-10-1));
 			});
 	    }
 	});

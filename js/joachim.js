@@ -6,7 +6,7 @@ $( document ).ready(function() {
 	function timelineinit () {
 		$('#timelineslider').slider({
 			range: "min",
-	        min: 0, 
+	        min: 1, 
 	        max: 12, 
 	        step: 1,
 	        value: 1,

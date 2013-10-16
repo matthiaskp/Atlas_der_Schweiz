@@ -438,6 +438,12 @@ body.helper {
     background-color: #6dbcdb;
     float: right; }
 
+.layercontainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 305px; }
+
 .layer {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -450,13 +456,13 @@ body.helper {
   margin-top: 20px;
   padding: 0 10px;
   z-index: 20;
-  margin-right: -317px;
-  margin-left: 317px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  transition: all 0.3s ease; }
+  margin-left: 265px;
+  margin-right: -265px;
+  -webkit-transition: margin 0.3s ease;
+  -moz-transition: margin 0.3s ease;
+  -o-transition: margin 0.3s ease;
+  -ms-transition: margin 0.3s ease;
+  transition: margin 0.3s ease; }
   .layer.is-expanded {
     margin-left: 0;
     margin-right: 0; }
@@ -523,7 +529,8 @@ body.helper {
     z-index: -1;
     position: absolute;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    background-size: 100% 100%; }
 
 .interfacebuttons button {
   z-index: 4; }
