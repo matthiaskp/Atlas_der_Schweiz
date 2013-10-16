@@ -42,8 +42,8 @@ $( document ).ready(function() {
 	}
 	// PREVENT SCROLLBOUNCE
 	function stopScrolling( touchEvent ) { touchEvent.preventDefault(); }
-	/*document.addEventListener( 'touchstart' , stopScrolling , false );*/
-	document.addEventListener( 'touchmove' , stopScrolling , false );
+	/*document.addEventListener( 'touchstart' , stopScrolling , false );
+	document.addEventListener( 'touchmove' , stopScrolling , false );*/
 
 	// SET BODY HEIGHT
 	setBodySize();

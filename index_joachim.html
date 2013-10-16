@@ -480,33 +480,31 @@
 <!--         <div id="kartenFarben"></div>
  -->        <!-- LAYERMANAGER -->
         <script type="text/html" id="layerTemplate">
-            <div class="grid_3 prefix_7">
-                <div class="layer <%= layerClass %>" data-layer="<%= layerClass %>">
-                    <header>
-                        <div class="kartenfarben <%= layerClass %>"></div>
-                        <p class="icon <%= layerIcon %>"><%= layerTitle %></p>
-                    </header>
-                    <div class="controls">
-                        <div class="grid_7">
-                            Deckkraft
-                            <div data-slider="<%= layerClass %>" class="opacityslider"></div>
-                        </div>
-                        <div class="grid_3">
-                            Sichtbar
-                            <div class="onoffswitch">
-                                <input type="checkbox" data-layer="<%= layerClass %>" name="onoffswitch" class="onoffswitch-checkbox" id="onoff-<%= layerClass %>" checked>
-                                <label class="onoffswitch-label" for="onoff-<%= layerClass %>">
-                                    <div class="onoffswitch-inner"></div>
-                                    <div class="onoffswitch-switch"></div>
-                                </label>
-                            </div>
+            <div class="layer <%= layerClass %>" data-layer="<%= layerClass %>">
+                <header>
+                    <div class="kartenfarben <%= layerClass %>"></div>
+                    <p class="icon <%= layerIcon %>"><%= layerTitle %></p>
+                </header>
+                <div class="controls">
+                    <div class="grid_7">
+                        Deckkraft
+                        <div data-slider="<%= layerClass %>" class="opacityslider"></div>
+                    </div>
+                    <div class="grid_3">
+                        Sichtbar
+                        <div class="onoffswitch">
+                            <input type="checkbox" data-layer="<%= layerClass %>" name="onoffswitch" class="onoffswitch-checkbox" id="onoff-<%= layerClass %>" checked>
+                            <label class="onoffswitch-label" for="onoff-<%= layerClass %>">
+                                <div class="onoffswitch-inner"></div>
+                                <div class="onoffswitch-switch"></div>
+                            </label>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="clear"></div>
         </script>
-        <div class="layercontainer">    
+        <div class="layercontainer grid_3 prefix_7">
+        <div class="clear"></div>  
         </div>
         <!-- LAYERS -->
         <script type="text/html" id="bgLayerTemplate">
